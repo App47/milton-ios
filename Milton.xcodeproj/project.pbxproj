@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83B7681A144CD79D00D160F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B76819144CD79D00D160F4 /* UIKit.framework */; };
+		83B7681C144CD79D00D160F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B7681B144CD79D00D160F4 /* Foundation.framework */; };
+		83B7681E144CD79D00D160F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B7681D144CD79D00D160F4 /* CoreGraphics.framework */; };
+		83B76824144CD79D00D160F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83B76822144CD79D00D160F4 /* InfoPlist.strings */; };
+		83B76826144CD79D00D160F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B76825144CD79D00D160F4 /* main.m */; };
+		83B7682A144CD79D00D160F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B76829144CD79D00D160F4 /* AppDelegate.m */; };
+		83B7682D144CD79D00D160F4 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B7682C144CD79D00D160F4 /* FirstViewController.m */; };
+		83B7682F144CD79D00D160F4 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 83B7682E144CD79D00D160F4 /* first.png */; };
+		83B76831144CD79D00D160F4 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83B76830144CD79D00D160F4 /* first@2x.png */; };
+		83B76834144CD79D00D160F4 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B76833144CD79D00D160F4 /* SecondViewController.m */; };
+		83B76836144CD79D00D160F4 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 83B76835144CD79D00D160F4 /* second.png */; };
+		83B76838144CD79D00D160F4 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83B76837144CD79D00D160F4 /* second@2x.png */; };
+		83B7683B144CD79D00D160F4 /* FirstViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83B76839144CD79D00D160F4 /* FirstViewController_iPhone.xib */; };
+		83B7683E144CD79D00D160F4 /* FirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83B7683C144CD79D00D160F4 /* FirstViewController_iPad.xib */; };
+		83B76841144CD79D00D160F4 /* SecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83B7683F144CD79D00D160F4 /* SecondViewController_iPhone.xib */; };
+		83B76844144CD79D00D160F4 /* SecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83B76842144CD79D00D160F4 /* SecondViewController_iPad.xib */; };
+		83B7684C144CD79E00D160F4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B7684B144CD79E00D160F4 /* SenTestingKit.framework */; };
+		83B7684D144CD79E00D160F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B76819144CD79D00D160F4 /* UIKit.framework */; };
+		83B7684E144CD79E00D160F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B7681B144CD79D00D160F4 /* Foundation.framework */; };
+		83B76856144CD79E00D160F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83B76854144CD79E00D160F4 /* InfoPlist.strings */; };
+		83B76859144CD79E00D160F4 /* MiltonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B76858144CD79E00D160F4 /* MiltonTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83B7684F144CD79E00D160F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83B7680C144CD79D00D160F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83B76814144CD79D00D160F4;
+			remoteInfo = Milton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		83B76815144CD79D00D160F4 /* Milton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83B76819144CD79D00D160F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		83B7681B144CD79D00D160F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		83B7681D144CD79D00D160F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		83B76821144CD79D00D160F4 /* Milton-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Milton-Info.plist"; sourceTree = "<group>"; };
+		83B76823144CD79D00D160F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		83B76825144CD79D00D160F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		83B76827144CD79D00D160F4 /* Milton-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Milton-Prefix.pch"; sourceTree = "<group>"; };
+		83B76828144CD79D00D160F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		83B76829144CD79D00D160F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		83B7682B144CD79D00D160F4 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		83B7682C144CD79D00D160F4 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		83B7682E144CD79D00D160F4 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		83B76830144CD79D00D160F4 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		83B76832144CD79D00D160F4 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		83B76833144CD79D00D160F4 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		83B76835144CD79D00D160F4 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		83B76837144CD79D00D160F4 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		83B7683A144CD79D00D160F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPhone.xib; sourceTree = "<group>"; };
+		83B7683D144CD79D00D160F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPad.xib; sourceTree = "<group>"; };
+		83B76840144CD79D00D160F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPhone.xib; sourceTree = "<group>"; };
+		83B76843144CD79D00D160F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPad.xib; sourceTree = "<group>"; };
+		83B7684A144CD79E00D160F4 /* MiltonTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiltonTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83B7684B144CD79E00D160F4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		83B76853144CD79E00D160F4 /* MiltonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MiltonTests-Info.plist"; sourceTree = "<group>"; };
+		83B76855144CD79E00D160F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		83B76857144CD79E00D160F4 /* MiltonTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiltonTests.h; sourceTree = "<group>"; };
+		83B76858144CD79E00D160F4 /* MiltonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiltonTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83B76812144CD79D00D160F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83B7681A144CD79D00D160F4 /* UIKit.framework in Frameworks */,
+				83B7681C144CD79D00D160F4 /* Foundation.framework in Frameworks */,
+				83B7681E144CD79D00D160F4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83B76846144CD79E00D160F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83B7684C144CD79E00D160F4 /* SenTestingKit.framework in Frameworks */,
+				83B7684D144CD79E00D160F4 /* UIKit.framework in Frameworks */,
+				83B7684E144CD79E00D160F4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83B7680A144CD79D00D160F4 = {
+			isa = PBXGroup;
+			children = (
+				83B7681F144CD79D00D160F4 /* Milton */,
+				83B76851144CD79E00D160F4 /* MiltonTests */,
+				83B76818144CD79D00D160F4 /* Frameworks */,
+				83B76816144CD79D00D160F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83B76816144CD79D00D160F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83B76815144CD79D00D160F4 /* Milton.app */,
+				83B7684A144CD79E00D160F4 /* MiltonTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83B76818144CD79D00D160F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83B76819144CD79D00D160F4 /* UIKit.framework */,
+				83B7681B144CD79D00D160F4 /* Foundation.framework */,
+				83B7681D144CD79D00D160F4 /* CoreGraphics.framework */,
+				83B7684B144CD79E00D160F4 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		83B7681F144CD79D00D160F4 /* Milton */ = {
+			isa = PBXGroup;
+			children = (
+				83B76828144CD79D00D160F4 /* AppDelegate.h */,
+				83B76829144CD79D00D160F4 /* AppDelegate.m */,
+				83B7682B144CD79D00D160F4 /* FirstViewController.h */,
+				83B7682C144CD79D00D160F4 /* FirstViewController.m */,
+				83B7682E144CD79D00D160F4 /* first.png */,
+				83B76830144CD79D00D160F4 /* first@2x.png */,
+				83B76832144CD79D00D160F4 /* SecondViewController.h */,
+				83B76833144CD79D00D160F4 /* SecondViewController.m */,
+				83B76835144CD79D00D160F4 /* second.png */,
+				83B76837144CD79D00D160F4 /* second@2x.png */,
+				83B76839144CD79D00D160F4 /* FirstViewController_iPhone.xib */,
+				83B7683C144CD79D00D160F4 /* FirstViewController_iPad.xib */,
+				83B7683F144CD79D00D160F4 /* SecondViewController_iPhone.xib */,
+				83B76842144CD79D00D160F4 /* SecondViewController_iPad.xib */,
+				83B76820144CD79D00D160F4 /* Supporting Files */,
+			);
+			path = Milton;
+			sourceTree = "<group>";
+		};
+		83B76820144CD79D00D160F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83B76821144CD79D00D160F4 /* Milton-Info.plist */,
+				83B76822144CD79D00D160F4 /* InfoPlist.strings */,
+				83B76825144CD79D00D160F4 /* main.m */,
+				83B76827144CD79D00D160F4 /* Milton-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83B76851144CD79E00D160F4 /* MiltonTests */ = {
+			isa = PBXGroup;
+			children = (
+				83B76857144CD79E00D160F4 /* MiltonTests.h */,
+				83B76858144CD79E00D160F4 /* MiltonTests.m */,
+				83B76852144CD79E00D160F4 /* Supporting Files */,
+			);
+			path = MiltonTests;
+			sourceTree = "<group>";
+		};
+		83B76852144CD79E00D160F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83B76853144CD79E00D160F4 /* MiltonTests-Info.plist */,
+				83B76854144CD79E00D160F4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83B76814144CD79D00D160F4 /* Milton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83B7685C144CD79E00D160F4 /* Build configuration list for PBXNativeTarget "Milton" */;
+			buildPhases = (
+				83B76811144CD79D00D160F4 /* Sources */,
+				83B76812144CD79D00D160F4 /* Frameworks */,
+				83B76813144CD79D00D160F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Milton;
+			productName = Milton;
+			productReference = 83B76815144CD79D00D160F4 /* Milton.app */;
+			productType = "com.apple.product-type.application";
+		};
+		83B76849144CD79E00D160F4 /* MiltonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83B7685F144CD79E00D160F4 /* Build configuration list for PBXNativeTarget "MiltonTests" */;
+			buildPhases = (
+				83B76845144CD79E00D160F4 /* Sources */,
+				83B76846144CD79E00D160F4 /* Frameworks */,
+				83B76847144CD79E00D160F4 /* Resources */,
+				83B76848144CD79E00D160F4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83B76850144CD79E00D160F4 /* PBXTargetDependency */,
+			);
+			name = MiltonTests;
+			productName = MiltonTests;
+			productReference = 83B7684A144CD79E00D160F4 /* MiltonTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83B7680C144CD79D00D160F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 83B7680F144CD79D00D160F4 /* Build configuration list for PBXProject "Milton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 83B7680A144CD79D00D160F4;
+			productRefGroup = 83B76816144CD79D00D160F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83B76814144CD79D00D160F4 /* Milton */,
+				83B76849144CD79E00D160F4 /* MiltonTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83B76813144CD79D00D160F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83B76824144CD79D00D160F4 /* InfoPlist.strings in Resources */,
+				83B7682F144CD79D00D160F4 /* first.png in Resources */,
+				83B76831144CD79D00D160F4 /* first@2x.png in Resources */,
+				83B76836144CD79D00D160F4 /* second.png in Resources */,
+				83B76838144CD79D00D160F4 /* second@2x.png in Resources */,
+				83B7683B144CD79D00D160F4 /* FirstViewController_iPhone.xib in Resources */,
+				83B7683E144CD79D00D160F4 /* FirstViewController_iPad.xib in Resources */,
+				83B76841144CD79D00D160F4 /* SecondViewController_iPhone.xib in Resources */,
+				83B76844144CD79D00D160F4 /* SecondViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83B76847144CD79E00D160F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83B76856144CD79E00D160F4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83B76848144CD79E00D160F4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83B76811144CD79D00D160F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83B76826144CD79D00D160F4 /* main.m in Sources */,
+				83B7682A144CD79D00D160F4 /* AppDelegate.m in Sources */,
+				83B7682D144CD79D00D160F4 /* FirstViewController.m in Sources */,
+				83B76834144CD79D00D160F4 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83B76845144CD79E00D160F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83B76859144CD79E00D160F4 /* MiltonTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		83B76850144CD79E00D160F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83B76814144CD79D00D160F4 /* Milton */;
+			targetProxy = 83B7684F144CD79E00D160F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		83B76822144CD79D00D160F4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83B76823144CD79D00D160F4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		83B76839144CD79D00D160F4 /* FirstViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83B7683A144CD79D00D160F4 /* en */,
+			);
+			name = FirstViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		83B7683C144CD79D00D160F4 /* FirstViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83B7683D144CD79D00D160F4 /* en */,
+			);
+			name = FirstViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		83B7683F144CD79D00D160F4 /* SecondViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83B76840144CD79D00D160F4 /* en */,
+			);
+			name = SecondViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		83B76842144CD79D00D160F4 /* SecondViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83B76843144CD79D00D160F4 /* en */,
+			);
+			name = SecondViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		83B76854144CD79E00D160F4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83B76855144CD79E00D160F4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		83B7685A144CD79E00D160F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		83B7685B144CD79E00D160F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		83B7685D144CD79E00D160F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
+				INFOPLIST_FILE = "Milton/Milton-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		83B7685E144CD79E00D160F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
+				INFOPLIST_FILE = "Milton/Milton-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		83B76860144CD79E00D160F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Milton.app/Milton";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
+				INFOPLIST_FILE = "MiltonTests/MiltonTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		83B76861144CD79E00D160F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Milton.app/Milton";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
+				INFOPLIST_FILE = "MiltonTests/MiltonTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83B7680F144CD79D00D160F4 /* Build configuration list for PBXProject "Milton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83B7685A144CD79E00D160F4 /* Debug */,
+				83B7685B144CD79E00D160F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83B7685C144CD79E00D160F4 /* Build configuration list for PBXNativeTarget "Milton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83B7685D144CD79E00D160F4 /* Debug */,
+				83B7685E144CD79E00D160F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		83B7685F144CD79E00D160F4 /* Build configuration list for PBXNativeTarget "MiltonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83B76860144CD79E00D160F4 /* Debug */,
+				83B76861144CD79E00D160F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83B7680C144CD79D00D160F4 /* Project object */;
+}
