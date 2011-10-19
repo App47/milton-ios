@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>application id</key>
+	<string>4e9d923490e1fa0001000020</string>
+	<key>configuration update frequency</key>
+	<real>1e-05</real>
+	<key>delay data upload interval</key>
+	<integer>10</integer>
+	<key>send actual device identifier</key>
+	<true/>
+	<key>show network activity</key>
+	<true/>
+</dict>
+</plist>

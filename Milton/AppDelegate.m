@@ -7,33 +7,29 @@
 //
 
 #import "AppDelegate.h"
+#import "EmbeddedAgent.h"
+#import "MiltonTabBarController.h"
 
-#import "FirstViewController.h"
-
-#import "SecondViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
 
+void handleUncaughtException(NSException *exception) {
+  EALogCrashException(exception, @"Application Crashed"); 
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-  UIViewController *viewController1, *viewController2;
-  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-      viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController_iPhone" bundle:nil];
-      viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPhone" bundle:nil];
-  } else {
-      viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController_iPad" bundle:nil];
-      viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPad" bundle:nil];
-  }
-  self.tabBarController = [[UITabBarController alloc] init];
-  self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
+  [EmbeddedAgent configureAgent];
+  NSSetUncaughtExceptionHandler(&handleUncaughtException);
+  
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  self.tabBarController = [[MiltonTabBarController alloc] init];
   self.window.rootViewController = self.tabBarController;
-    [self.window makeKeyAndVisible];
-    return YES;
+  [self.window makeKeyAndVisible];
+  return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -59,11 +55,8 @@
    */
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-  /*
-   Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-   */
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+  [[self tabBarController] performSelector:@selector(updateTabsFromConfiguration) withObject:nil afterDelay:3];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -76,17 +69,17 @@
 }
 
 /*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-}
-*/
+ // Optional UITabBarControllerDelegate method.
+ - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+ {
+ }
+ */
 
 /*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
-{
-}
-*/
+ // Optional UITabBarControllerDelegate method.
+ - (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
+ {
+ }
+ */
 
 @end
