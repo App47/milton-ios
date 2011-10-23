@@ -143,6 +143,16 @@
 + (BOOL) configurationBoolForKey:(NSString *) key;
 + (BOOL) configurationBoolForKey:(NSString *) key defaultValue:(BOOL)defaultValue;
 
+// Retrieve a configuration item as a file, the file is wrapped in an NSData object and can be used for 
+// webviews, UIImages and the ilk.
++ (NSData *) configurationFileForKey:(NSString *) key group:(NSString *) group;
+// Retrieve a configuration value by key only. If more than one configuration group has the requested 
+// key, the value in the first configuration group is returned. Order of the configuration groups is
+// arbitrary. See + (NSArray *) configurationObjectsForKey:(NSString *) key for a list of all values
+// for a given configuration item.
++ (NSData *) configurationFileForKey:(NSString *) key;
+
+
 // Retreive a configuration item as a base object.
 + (id) configurationObjectForKey:(NSString *) key group:(NSString *)group;
 + (id) configurationObjectForKey:(NSString *) key group:(NSString *)group defaultValue:(id)defaultValue;
@@ -156,6 +166,22 @@
 + (id) configurationObjectForKey:(NSString *) key defaultValue:(id)defaultValue;
 + (NSArray *) configurationObjectsForKey:(NSString *) key;
 
+// Configuration updates happen in a background thread, subsequently the App can be notified when 
+// the configuration of a group did change. You will recieved one message for each configuration group
+// Change.
+extern NSString * const EmbeddedAgentAppConfigurationGroupDidInsert;
+extern NSString * const EmbeddedAgentAppConfigurationGroupDidUpdate;
+extern NSString * const EmbeddedAgentAppConfigurationGroupDidDelete;
+// Each message will contain a single value in the userInfo with the following key. The value returned
+// by the key is the name of the group that was either added, updated, or deleted.
+extern NSString * const EmbeddedAgentAppConfigurationGroupNameKey;
+// Alternatively, you can register a single notification when any configuration group changes.
+// The name of the configuration group and specific action is NOT sent, only the fact that 
+// the configurationg roup was change.
+extern NSString * const EmbeddedAgentAppConfigurationGroupDidChange;
+
+// Register with the NSNotification center to receive these events.
+// Give example
 
 //////////////////////////////////////////////////////////////////
 // Logging.

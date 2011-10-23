@@ -56,7 +56,7 @@ void handleUncaughtException(NSException *exception) {
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-  [[self tabBarController] performSelector:@selector(updateTabsFromConfiguration) withObject:nil afterDelay:3];
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

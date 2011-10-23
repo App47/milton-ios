@@ -63,19 +63,23 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+  // Register ourselves to get updates on configuration changes.
+  [[NSNotificationCenter defaultCenter] addObserver:self 
+                                           selector:@selector(updateTabsFromConfiguration) 
+                                               name:EmbeddedAgentAppConfigurationGroupDidChange 
+                                             object:nil];
+  [self updateTabsFromConfiguration];
     [super viewDidLoad];
 }
-*/
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
+  // Remove ourselves from observing configuration changes if we get uploaded.
+  [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                  name:EmbeddedAgentAppConfigurationGroupDidChange 
+                                                object:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
