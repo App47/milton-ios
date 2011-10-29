@@ -17,6 +17,7 @@
 @synthesize tabBarController = _tabBarController;
 
 void handleUncaughtException(NSException *exception) {
+  // Use the exception log reporting to capture the crash log.
   EALogCrashException(exception, @"Application Crashed"); 
 }
 

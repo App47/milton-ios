@@ -9,7 +9,4 @@
 
 @interface MiltonTabBarController : UITabBarController
 
-
-- (void) updateTabsFromConfiguration;
-
 @end
