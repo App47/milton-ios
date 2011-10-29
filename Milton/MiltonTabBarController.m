@@ -19,9 +19,11 @@
 
 
 - (void) updateTabsFromConfiguration {
-  // Make sure we are running on the main thread.
+  // Make sure we are running on the main thread, just defensive coding.
   if (NO==[NSThread isMainThread]){
-    [self performSelectorOnMainThread:@selector(updateTabsFromConfiguration) withObject:nil waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(updateTabsFromConfiguration) 
+                           withObject:nil 
+                        waitUntilDone:NO];
     return;
   }
   // Get the tab list group name from the main UI configuration group
