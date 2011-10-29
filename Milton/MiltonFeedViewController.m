@@ -13,7 +13,7 @@
 @interface MiltonFeedViewController()
 @property (strong, nonatomic) NSURL *url;
 @property (strong, nonatomic) NSMutableArray *feedItems;
-@property (strong, nonatomic) NSString *feedLoadEventID;
+@property (strong) NSString *feedLoadEventID;
 @end
 
 
@@ -34,24 +34,16 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  
+
+- (void)viewDidAppear:(BOOL)animated {
   MWFeedParser *parser = [[MWFeedParser alloc]initWithFeedURL:[self url]];
   [parser setDelegate:self];
-  [parser parse];
-  
+  // We are going to send the parser to a background thread so that the UI doesn't pause
+  [parser performSelectorInBackground:@selector(parse) withObject:nil];
+  [super viewDidAppear:animated];
 }
 
-
-- (void)viewWillAppear:(BOOL)animated {
-  [[self tableView] reloadData];
-  [super viewWillAppear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-  // Return YES for supported orientations
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
   return YES;
 }
 
@@ -86,52 +78,48 @@
   return cell;
 }
 
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  // Navigation logic may go here. Create and push another view controller.
-  /*
-   <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-   // ...
-   // Pass the selected object to the new view controller.
-   [self.navigationController pushViewController:detailViewController animated:YES];
-   */
-}
-
-
 #pragma mark - MWFeedParserDelgate
 
 - (void)feedParserDidStart:(MWFeedParser *)parser{
-  NSString *eventName = [NSString stringWithFormat:@"Load feed %@",[[self tabBarItem] title]];
+  NSString *eventName = [NSString stringWithFormat:@"Load feed %@",[[[self navigationController] tabBarItem] title]];
+  EALogDebug(@"Started parsing feed: %@", eventName);
   [self setFeedLoadEventID:[EmbeddedAgent startTimedEvent:eventName]];
   
 }
 - (void)feedParser:(MWFeedParser *)parser didParseFeedInfo:(MWFeedInfo *)info{
-  // Set the title of the nav controller
-  [[self navigationItem] setTitle:[info title]];
+  // Set the title of the nav controller, make sure it's done on the main thread
+  // as we sent the parser to the background.
+  [[self navigationItem] performSelectorOnMainThread:@selector(setTitle:) 
+                                          withObject:[info title] 
+                                       waitUntilDone:NO];
 }
-- (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item{
-  
+- (void) addFeedItem:(MWFeedItem *) item{
   NSIndexPath *path = [NSIndexPath indexPathForRow:[[self feedItems]count] inSection:0];
+  [[self tableView] beginUpdates];
   [[self feedItems] addObject:item];
   [[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:path] 
-                          withRowAnimation:UITableViewRowAnimationBottom];
-  
+                          withRowAnimation:UITableViewRowAnimationFade];
+  [[self tableView] endUpdates];
+}
+- (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item{
+  // Send back to the main UI thread.
+  [self performSelectorOnMainThread:@selector(addFeedItem:) withObject:item waitUntilDone:NO];  
 }
 - (void)feedParserDidFinish:(MWFeedParser *)parser{
+  NSString *eventName = [NSString stringWithFormat:@"Load feed %@",[[[self navigationController] tabBarItem] title]];
+  EALogDebug(@"Done parsing feed: %@", eventName);
   [EmbeddedAgent endTimedEvent:[self feedLoadEventID]];
 }
 - (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error{
-  [EmbeddedAgent endTimedEvent:[self feedLoadEventID]];
+  NSString *eventName = [NSString stringWithFormat:@"Feed (@%) failed to load",[[[self navigationController] tabBarItem] title]];
+  [EmbeddedAgent sendGenericEvent:eventName];
   EALogErrorWithError(error, @"Unable to parse feed %@", [self url]);
   UIAlertView *view = [[UIAlertView alloc]initWithTitle:@"Unable to parse feed" 
                                                 message:[error localizedDescription] 
                                                delegate:nil 
                                       cancelButtonTitle:@"OK" 
                                       otherButtonTitles: nil];
-  [view show];
+  [view performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:NO];
 }
 
 
