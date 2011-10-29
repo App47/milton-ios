@@ -17,6 +17,7 @@
 @synthesize tabBarController = _tabBarController;
 
 void handleUncaughtException(NSException *exception) {
+  // Use the exception log reporting to capture the crash log.
   EALogCrashException(exception, @"Application Crashed"); 
 }
 
@@ -56,7 +57,7 @@ void handleUncaughtException(NSException *exception) {
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-  [[self tabBarController] performSelector:@selector(updateTabsFromConfiguration) withObject:nil afterDelay:3];
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
