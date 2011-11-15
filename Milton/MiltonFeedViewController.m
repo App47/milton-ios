@@ -38,7 +38,6 @@
   MWFeedParser *parser = [[MWFeedParser alloc]initWithFeedURL:[self url]];
   [parser setDelegate:self];
   // We are going to send the parser to a background thread so that the UI doesn't pause
-//  [parser performSelectorInBackground:@selector(parse) withObject:nil];
   [parser parse];
   [super viewDidAppear:animated];
 }
