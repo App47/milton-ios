@@ -12,7 +12,7 @@
 
 
 #define TAB_LISTING_NAME @"Tab listing"
-#define UI_CONFIGURATION_GROUP_NAME @"UI Configuration"
+#define UI_CONFIGURATION_GROUP_NAME @"Ux Configuration"
 
 @implementation MiltonTabBarController
 
@@ -59,7 +59,7 @@
 // Description: Actually the name of this group needs to match the value in the previous table for the 
 //              "Tab listing" key. However in our example, it is "Tabs". This group has a list of tabs
 //              to display in milton along with their order. The order is the key value and the value is 
-//              name of the correspoding group for the tab.
+//              name of the corresponding group for the tab.
 // Expected key/values
 // ____________________________________________________
 // |  Key          |            Value                 |
