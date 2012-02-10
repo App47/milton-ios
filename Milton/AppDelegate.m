@@ -3,7 +3,7 @@
 //  Milton
 //
 //  Created by Chris Schroeder on 10/17/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 App47. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -16,15 +16,11 @@
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
 
-void handleUncaughtException(NSException *exception) {
-  // Use the exception log reporting to capture the crash log.
-  EALogCrashException(exception, @"Application Crashed"); 
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [EmbeddedAgent configureAgent];
-  NSSetUncaughtExceptionHandler(&handleUncaughtException);
+  [EmbeddedAgent InstallExceptionHandlers];
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.tabBarController = [[MiltonTabBarController alloc] init];

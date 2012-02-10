@@ -12,7 +12,7 @@
 
 
 #define TAB_LISTING_NAME @"Tab listing"
-#define UI_CONFIGURATION_GROUP_NAME @"Ux Configuration"
+#define UI_CONFIGURATION_GROUP_NAME @"UI Configuration"
 
 @implementation MiltonTabBarController
 
@@ -104,7 +104,7 @@
     return;
   }
   // Get the tab list group name from the main UI configuration group
-  NSString *tabGroupName = [EmbeddedAgent configurationObjectForKey:TAB_LISTING_NAME group:UI_CONFIGURATION_GROUP_NAME];
+  NSString *tabGroupName = [EmbeddedAgent configurationStringForKey:TAB_LISTING_NAME group:UI_CONFIGURATION_GROUP_NAME];
   // Check to make sure we have the tab group name, if not, then load static pages.
   if ([tabGroupName length]<=0){
     [self loadStaticTabs];

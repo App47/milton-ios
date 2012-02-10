@@ -3,7 +3,7 @@
 //  Milton
 //
 //  Created by Chris Schroeder on 10/17/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 App47t. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -23,7 +23,6 @@
 		835F20B5144DC9D200B8F7B5 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F20AA144DC9D200B8F7B5 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		835F20B6144DC9D200B8F7B5 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F20AC144DC9D200B8F7B5 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
 		835F20B7144DC9D200B8F7B5 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F20AE144DC9D200B8F7B5 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
-		835F20B8144DC9D200B8F7B5 /* libEmbeddedAgent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 835F20AF144DC9D200B8F7B5 /* libEmbeddedAgent.a */; };
 		835F20BA144DCC0F00B8F7B5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835F20B9144DCC0F00B8F7B5 /* CoreLocation.framework */; };
 		835F2179144DF38600B8F7B5 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 835F20BC144DF38500B8F7B5 /* add.png */; };
 		835F217A144DF38600B8F7B5 /* airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 835F20BD144DF38500B8F7B5 /* airplane.png */; };
@@ -216,6 +215,7 @@
 		835F2235144DF38600B8F7B5 /* yin-yang.png in Resources */ = {isa = PBXBuildFile; fileRef = 835F2178144DF38600B8F7B5 /* yin-yang.png */; };
 		835F2238144DF47700B8F7B5 /* MiltonTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F2237144DF47700B8F7B5 /* MiltonTabBarController.m */; };
 		835F223F144E233800B8F7B5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 835F223E144E233700B8F7B5 /* icon.png */; };
+		839F159914E5619200C08D61 /* libEmbeddedAgent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 839F159814E5619200C08D61 /* libEmbeddedAgent.a */; };
 		83B7681A144CD79D00D160F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B76819144CD79D00D160F4 /* UIKit.framework */; };
 		83B7681C144CD79D00D160F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B7681B144CD79D00D160F4 /* Foundation.framework */; };
 		83B7681E144CD79D00D160F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B7681D144CD79D00D160F4 /* CoreGraphics.framework */; };
@@ -276,7 +276,6 @@
 		835F20AC144DC9D200B8F7B5 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		835F20AD144DC9D200B8F7B5 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		835F20AE144DC9D200B8F7B5 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		835F20AF144DC9D200B8F7B5 /* libEmbeddedAgent.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgent.a; sourceTree = "<group>"; };
 		835F20B9144DCC0F00B8F7B5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		835F20BC144DF38500B8F7B5 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		835F20BD144DF38500B8F7B5 /* airplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplane.png; sourceTree = "<group>"; };
@@ -470,6 +469,7 @@
 		835F2236144DF47700B8F7B5 /* MiltonTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiltonTabBarController.h; sourceTree = "<group>"; };
 		835F2237144DF47700B8F7B5 /* MiltonTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiltonTabBarController.m; sourceTree = "<group>"; };
 		835F223E144E233700B8F7B5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		839F159814E5619200C08D61 /* libEmbeddedAgent.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgent.a; sourceTree = "<group>"; };
 		83B76815144CD79D00D160F4 /* Milton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B76819144CD79D00D160F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		83B7681B144CD79D00D160F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -497,7 +497,7 @@
 				83B7681A144CD79D00D160F4 /* UIKit.framework in Frameworks */,
 				83B7681C144CD79D00D160F4 /* Foundation.framework in Frameworks */,
 				83B7681E144CD79D00D160F4 /* CoreGraphics.framework in Frameworks */,
-				835F20B8144DC9D200B8F7B5 /* libEmbeddedAgent.a in Frameworks */,
+				839F159914E5619200C08D61 /* libEmbeddedAgent.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,11 +539,11 @@
 		835F2099144DC9D200B8F7B5 /* App47 */ = {
 			isa = PBXGroup;
 			children = (
+				839F159814E5619200C08D61 /* libEmbeddedAgent.a */,
 				835F209A144DC9D200B8F7B5 /* EmbeddedAgent.h */,
 				835F209B144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist */,
 				835F209C144DC9D200B8F7B5 /* GoogleToolbox */,
 				835F20A1144DC9D200B8F7B5 /* JSON */,
-				835F20AF144DC9D200B8F7B5 /* libEmbeddedAgent.a */,
 			);
 			name = App47;
 			path = Milton/App47;
@@ -1267,8 +1267,15 @@
 		83B7685D144CD79E00D160F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				CODE_SIGN_IDENTITY = "iPhone Distribution: App47, Inc.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: App47, Inc.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Milton/Milton-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -1277,6 +1284,9 @@
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1D679714-EABD-484B-86C1-BB9A8DE9C1CA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1D679714-EABD-484B-86C1-BB9A8DE9C1CA";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1284,8 +1294,13 @@
 		83B7685E144CD79E00D160F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Milton/Milton-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -1294,6 +1309,7 @@
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

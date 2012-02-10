@@ -48,6 +48,8 @@
 // in your "Events" tab for the App and will be broken out by name.
 + (void) sendGenericEvent:(NSString *) name;
 + (void) sendGenericEvent:(NSString *) name tags:(NSArray *) tags;
++ (void) sendGenericEvent:(NSString *) name tags:(NSArray *) tags userInfo:(NSDictionary *)userInfo;
++ (void) sendGenericEvent:(NSString *) name userInfo:(NSDictionary *)userInfo;
 
 //////////////////////////////////////////////////////////////////
 // Timed events allow you to keep track of significant events in your app and how long they take.
@@ -69,6 +71,13 @@
 + (NSString *) startTimedEvent:(NSString *)name tags:(NSArray *)tags;
 + (NSString *) startTimedEvent:(NSString *)name userInfo:(NSDictionary *)userInfo;
 + (NSString *) startTimedEvent:(NSString *)name tags:(NSArray *)tags userInfo:(NSDictionary *)userInfo;
+
+// To clear a timed event that you do not want sent to the server. This will remove
+// it from the local cache.
++ (void) clearTimedEvent:(NSString *) uuid;
+// Clear out any time events older than the given time interval. The value is in 
+// seconds. Use the value 0 to clear all currently cached timed events.
++ (void) clearTimedEventsOlderThanTimeInterval:(NSTimeInterval)timeInternval;
 
 // To end a timed event, pass the uuid received when creating the event using one of the methods below.
 // If additional tags or userInfo dictionaries are passed in when ending an event, the lists/dictionaries
@@ -95,7 +104,7 @@
 + (NSArray *) configurationGroupNames;
 + (NSArray *) allKeysForConfigurationGroup:(NSString *) groupName;
 
-// Retreive a configuration item as a string.
+// Retrieve a configuration item as a string.
 + (NSString *) configurationStringForKey:(NSString *) key group:(NSString *)group;
 + (NSString *) configurationStringForKey:(NSString *) key group:(NSString *)group defaultValue:(NSString *)defaultValue;
 // 
@@ -107,7 +116,7 @@
 + (NSString *) configurationStringForKey:(NSString *) key;
 + (NSString *) configurationStringForKey:(NSString *) key defaultValue:(NSString *)defaultValue;
 
-// Retreive a configuration item as a numrical value.
+// Retrieve a configuration item as a numrical value.
 + (NSNumber *) configurationNumberForKey:(NSString *) key group:(NSString *)group;
 + (NSNumber *) configurationNumberForKey:(NSString *) key group:(NSString *)group defaultValue:(NSNumber *)defaultValue;
 // 
@@ -119,7 +128,7 @@
 + (NSNumber *) configurationNumberForKey:(NSString *) key;
 + (NSNumber *) configurationNumberForKey:(NSString *) key defaultValue:(NSNumber *)defaultValue;
 
-// // Retreive a configuration item as a date
+// Retrieve a configuration item as a date
 + (NSDate *) configurationDateForKey:(NSString *) key group:(NSString *)group;
 + (NSDate *) configurationDateForKey:(NSString *) key group:(NSString *)group defaultValue:(NSDate *)defaultValue;
 // 
@@ -131,7 +140,7 @@
 + (NSDate *) configurationDateForKey:(NSString *) key;
 + (NSDate *) configurationDateForKey:(NSString *) key defaultValue:(NSDate *)defaultValue;
 
-// Retreive a configuration item as a boolean value.
+// Retrieve a configuration item as a boolean value.
 + (BOOL) configurationBoolForKey:(NSString *) key group:(NSString *)group;
 + (BOOL) configurationBoolForKey:(NSString *) key group:(NSString *)group defaultValue:(BOOL)defaultValue;
 // 
@@ -153,7 +162,7 @@
 + (NSData *) configurationFileForKey:(NSString *) key;
 
 
-// Retreive a configuration item as a base object.
+// Retrieve a configuration item as a base object.
 + (id) configurationObjectForKey:(NSString *) key group:(NSString *)group;
 + (id) configurationObjectForKey:(NSString *) key group:(NSString *)group defaultValue:(id)defaultValue;
 // 
@@ -182,6 +191,10 @@ extern NSString * const EmbeddedAgentAppConfigurationGroupDidChange;
 
 // Register with the NSNotification center to receive these events.
 // Give example
+
+//////////////////////////////////////////////////////////////////
+// Exception handling and crash loggin
++ (void) InstallExceptionHandlers;
 
 //////////////////////////////////////////////////////////////////
 // Logging.
