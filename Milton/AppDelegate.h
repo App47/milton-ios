@@ -9,9 +9,9 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (retain, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) MiltonTabBarController *tabBarController;
+@property (retain, nonatomic) MiltonTabBarController *tabBarController;
 
 void handleUncaughtException(NSException *exception) ;
 

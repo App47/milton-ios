@@ -11,9 +11,9 @@
 #import "EmbeddedAgent.h"
 
 @interface MiltonFeedViewController()
-@property (strong, nonatomic) NSURL *url;
-@property (strong, nonatomic) NSMutableArray *feedItems;
-@property (strong) NSString *feedLoadEventID;
+@property (retain, nonatomic) NSURL *url;
+@property (retain, nonatomic) NSMutableArray *feedItems;
+@property (retain) NSString *feedLoadEventID;
 @end
 
 
@@ -63,7 +63,7 @@
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
   }
   
   MWFeedItem *item = [[self feedItems] objectAtIndex:indexPath.row];
@@ -73,7 +73,7 @@
   [formatter setDateStyle:NSDateFormatterMediumStyle];
   [formatter setTimeStyle:NSDateFormatterShortStyle];
   [[cell detailTextLabel] setText:[formatter stringFromDate:[item date]]];
-  
+    [formatter release];
   return cell;
 }
 
@@ -119,6 +119,7 @@
                                       cancelButtonTitle:@"OK" 
                                       otherButtonTitles: nil];
   [view performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:NO];
+    [view release];
 }
 
 
