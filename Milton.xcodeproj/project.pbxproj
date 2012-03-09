@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		832B775415099238000B0DB7 /* libEmbeddedAgentWithNoCoreLocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832B775315099238000B0DB7 /* libEmbeddedAgentWithNoCoreLocation.a */; };
 		835B4D64144EF48900F2A535 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D5E144EF48900F2A535 /* MWFeedInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		835B4D65144EF48900F2A535 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D60144EF48900F2A535 /* MWFeedItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		835B4D66144EF48900F2A535 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D62144EF48900F2A535 /* MWFeedParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -215,7 +216,6 @@
 		835F2235144DF38600B8F7B5 /* yin-yang.png in Resources */ = {isa = PBXBuildFile; fileRef = 835F2178144DF38600B8F7B5 /* yin-yang.png */; };
 		835F2238144DF47700B8F7B5 /* MiltonTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F2237144DF47700B8F7B5 /* MiltonTabBarController.m */; };
 		835F223F144E233800B8F7B5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 835F223E144E233700B8F7B5 /* icon.png */; };
-		839F159914E5619200C08D61 /* libEmbeddedAgent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 839F159814E5619200C08D61 /* libEmbeddedAgent.a */; };
 		83B7681A144CD79D00D160F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B76819144CD79D00D160F4 /* UIKit.framework */; };
 		83B7681C144CD79D00D160F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B7681B144CD79D00D160F4 /* Foundation.framework */; };
 		83B7681E144CD79D00D160F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B7681D144CD79D00D160F4 /* CoreGraphics.framework */; };
@@ -240,6 +240,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		832B775315099238000B0DB7 /* libEmbeddedAgentWithNoCoreLocation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgentWithNoCoreLocation.a; sourceTree = "<group>"; };
 		835B4D5D144EF48900F2A535 /* MWFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedInfo.h; sourceTree = "<group>"; };
 		835B4D5E144EF48900F2A535 /* MWFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedInfo.m; sourceTree = "<group>"; };
 		835B4D5F144EF48900F2A535 /* MWFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedItem.h; sourceTree = "<group>"; };
@@ -469,7 +470,6 @@
 		835F2236144DF47700B8F7B5 /* MiltonTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiltonTabBarController.h; sourceTree = "<group>"; };
 		835F2237144DF47700B8F7B5 /* MiltonTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiltonTabBarController.m; sourceTree = "<group>"; };
 		835F223E144E233700B8F7B5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		839F159814E5619200C08D61 /* libEmbeddedAgent.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgent.a; sourceTree = "<group>"; };
 		83B76815144CD79D00D160F4 /* Milton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B76819144CD79D00D160F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		83B7681B144CD79D00D160F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -497,7 +497,7 @@
 				83B7681A144CD79D00D160F4 /* UIKit.framework in Frameworks */,
 				83B7681C144CD79D00D160F4 /* Foundation.framework in Frameworks */,
 				83B7681E144CD79D00D160F4 /* CoreGraphics.framework in Frameworks */,
-				839F159914E5619200C08D61 /* libEmbeddedAgent.a in Frameworks */,
+				832B775415099238000B0DB7 /* libEmbeddedAgentWithNoCoreLocation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +539,7 @@
 		835F2099144DC9D200B8F7B5 /* App47 */ = {
 			isa = PBXGroup;
 			children = (
-				839F159814E5619200C08D61 /* libEmbeddedAgent.a */,
+				832B775315099238000B0DB7 /* libEmbeddedAgentWithNoCoreLocation.a */,
 				835F209A144DC9D200B8F7B5 /* EmbeddedAgent.h */,
 				835F209B144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist */,
 				835F209C144DC9D200B8F7B5 /* GoogleToolbox */,
@@ -900,7 +900,7 @@
 		83B7680C144CD79D00D160F4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = App47;
 			};
 			buildConfigurationList = 83B7680F144CD79D00D160F4 /* Build configuration list for PBXProject "Milton" */;
@@ -1216,7 +1216,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: App47, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: App47, Inc.";
 				COPY_PHASE_STRIP = NO;
@@ -1245,7 +1245,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: App47, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: App47, Inc.";
 				COPY_PHASE_STRIP = YES;
@@ -1275,6 +1275,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: App47, Inc.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Milton/Milton-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
@@ -1300,6 +1301,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Milton/Milton-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;

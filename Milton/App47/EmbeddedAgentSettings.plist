@@ -9,7 +9,7 @@
 	<key>delay data upload interval</key>
 	<integer>10</integer>
 	<key>agent logging level</key>
-	<string>warn</string>
+	<string>debug</string>
 	<key>show network activity</key>
 	<true/>
 </dict>
