@@ -14,6 +14,7 @@
 @property (retain, nonatomic) NSURL *url;
 @property (retain, nonatomic) NSMutableArray *feedItems;
 @property (retain) NSString *feedLoadEventID;
+@property (retain) MWFeedParser *parser;
 @end
 
 
@@ -21,6 +22,7 @@
 @synthesize url=_url;
 @synthesize feedItems=_feedItems;
 @synthesize feedLoadEventID=_feedLoadEventID;
+@synthesize parser=_parser;
 
 - (id) initWithURL:(NSURL *) url{
   self = [super initWithStyle:UITableViewStylePlain];
@@ -31,14 +33,27 @@
   return self;
 }
 
-
+//- (void) dealloc{
+//  [self setUrl:nil];
+//  [self setFeedItems:nil];
+//  [self setFeedLoadEventID:nil];
+//  [[self parser] setDelegate:nil];
+//  [self setParser:nil];
+//  
+//  [super dealloc];
+//}
 #pragma mark - View lifecycle
 
 - (void)viewDidAppear:(BOOL)animated {
   MWFeedParser *parser = [[MWFeedParser alloc]initWithFeedURL:[self url]];
   [parser setDelegate:self];
   // We are going to send the parser to a background thread so that the UI doesn't pause
-  [parser parse];
+  parser.feedParseType = ParseTypeFull; // Parse feed info and all items
+	parser.connectionType = ConnectionTypeAsynchronously;
+  [self setParser:parser];
+
+//  [parser release];
+  [[self parser] parse];
   [super viewDidAppear:animated];
 }
 
@@ -63,7 +78,7 @@
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
-    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
   }
   
   MWFeedItem *item = [[self feedItems] objectAtIndex:indexPath.row];
@@ -73,7 +88,7 @@
   [formatter setDateStyle:NSDateFormatterMediumStyle];
   [formatter setTimeStyle:NSDateFormatterShortStyle];
   [[cell detailTextLabel] setText:[formatter stringFromDate:[item date]]];
-    [formatter release];
+//    [formatter release];
   return cell;
 }
 
@@ -108,10 +123,12 @@
   NSString *eventName = [NSString stringWithFormat:@"Load feed %@",[[[self navigationController] tabBarItem] title]];
   EALogDebug(@"Done parsing feed: %@", eventName);
   [EmbeddedAgent endTimedEvent:[self feedLoadEventID]];
+  [parser setDelegate:nil];
 }
 - (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error{
-  NSString *eventName = [NSString stringWithFormat:@"Feed (@%) failed to load",[[[self navigationController] tabBarItem] title]];
+  NSString *eventName = [NSString stringWithFormat:@"Feed (%@) failed to load",[[[self navigationController] tabBarItem] title]];
   [EmbeddedAgent sendGenericEvent:eventName];
+  [parser setDelegate:nil];
   EALogErrorWithError(error, @"Unable to parse feed %@", [self url]);
   UIAlertView *view = [[UIAlertView alloc]initWithTitle:@"Unable to parse feed" 
                                                 message:[error localizedDescription] 
@@ -119,7 +136,7 @@
                                       cancelButtonTitle:@"OK" 
                                       otherButtonTitles: nil];
   [view performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:NO];
-    [view release];
+//    [view release];
 }
 
 

@@ -28,9 +28,9 @@
   [navController setTabBarItem:tabBarItem];
   [viewControllers addObject:navController];
 
-    [controller release];
-    [tabBarItem release];
-    [navController release];
+//    [controller release];
+//    [tabBarItem release];
+//    [navController release];
  
   controller = [[MiltonFeedViewController alloc] initWithURL:[NSURL URLWithString:@"http://rssfeeds.usatoday.com/usatoday-NewsTopStories"]];
   navController = [[UINavigationController alloc]initWithRootViewController:controller];
@@ -43,9 +43,9 @@
 
   
   [self setViewControllers:viewControllers animated:YES];
-    [controller release];
-    [tabBarItem release];
-    [navController release];
+//    [controller release];
+//    [tabBarItem release];
+//    [navController release];
 
 }
 // Update the displayed tabs from configuration. This is expecting at least three configuration groups defined below:
@@ -144,9 +144,9 @@
     UITabBarItem *tabBarItem = [[UITabBarItem alloc]initWithTitle:tabTitle image:image tag:500];
     [navController setTabBarItem:tabBarItem];
     [viewControllers addObject:navController];
-      [controller release];
-      [tabBarItem release];
-      [navController release];
+//      [controller release];
+//      [tabBarItem release];
+//      [navController release];
 
     
   }

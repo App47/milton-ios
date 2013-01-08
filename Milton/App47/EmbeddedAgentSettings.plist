@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>application id</key>
-	<string>4e9d923490e1fa0001000020</string>
+	<string>4fc74edddd991d0001000019</string>
 	<key>configuration update frequency</key>
 	<real>0.0001</real>
 	<key>delay data upload interval</key>
@@ -11,6 +11,10 @@
 	<key>agent logging level</key>
 	<string>debug</string>
 	<key>show network activity</key>
+	<false/>
+	<key>send events immediately</key>
+	<false/>
+	<key>upload on exit</key>
 	<true/>
 </dict>
 </plist>
