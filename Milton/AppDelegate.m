@@ -24,7 +24,6 @@ void handleUncaughtException(NSException *exception) {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [EmbeddedAgent configureAgent];
-  NSSetUncaughtExceptionHandler(&handleUncaughtException);
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.tabBarController = [[MiltonTabBarController alloc] init];

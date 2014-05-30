@@ -16,13 +16,7 @@
 		835B4D73144EF52900F2A535 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D72144EF52900F2A535 /* NSDate+InternetDateTime.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		835B4D76144EF5C600F2A535 /* MiltonFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D75144EF5C600F2A535 /* MiltonFeedViewController.m */; };
 		835F20B0144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 835F209B144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist */; };
-		835F20B1144DC9D200B8F7B5 /* GTMStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F20A0144DC9D200B8F7B5 /* GTMStackTrace.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
-		835F20B2144DC9D200B8F7B5 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F20A4144DC9D200B8F7B5 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
-		835F20B3144DC9D200B8F7B5 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F20A6144DC9D200B8F7B5 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
-		835F20B4144DC9D200B8F7B5 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F20A8144DC9D200B8F7B5 /* SBJSON.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
-		835F20B5144DC9D200B8F7B5 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F20AA144DC9D200B8F7B5 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
-		835F20B6144DC9D200B8F7B5 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F20AC144DC9D200B8F7B5 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
-		835F20B7144DC9D200B8F7B5 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F20AE144DC9D200B8F7B5 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = " -fno-objc-arc"; }; };
+		835F20B1144DC9D200B8F7B5 /* GTMStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 835F20A0144DC9D200B8F7B5 /* GTMStackTrace.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		835F20B8144DC9D200B8F7B5 /* libEmbeddedAgent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 835F20AF144DC9D200B8F7B5 /* libEmbeddedAgent.a */; };
 		835F20BA144DCC0F00B8F7B5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835F20B9144DCC0F00B8F7B5 /* CoreLocation.framework */; };
 		835F2179144DF38600B8F7B5 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 835F20BC144DF38500B8F7B5 /* add.png */; };
@@ -902,6 +896,11 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = App47;
+				TargetAttributes = {
+					83B76814144CD79D00D160F4 = {
+						DevelopmentTeam = NGV5567849;
+					};
+				};
 			};
 			buildConfigurationList = 83B7680F144CD79D00D160F4 /* Build configuration list for PBXProject "Milton" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1155,12 +1154,6 @@
 				83B76826144CD79D00D160F4 /* main.m in Sources */,
 				83B7682A144CD79D00D160F4 /* AppDelegate.m in Sources */,
 				835F20B1144DC9D200B8F7B5 /* GTMStackTrace.m in Sources */,
-				835F20B2144DC9D200B8F7B5 /* NSObject+SBJSON.m in Sources */,
-				835F20B3144DC9D200B8F7B5 /* NSString+SBJSON.m in Sources */,
-				835F20B4144DC9D200B8F7B5 /* SBJSON.m in Sources */,
-				835F20B5144DC9D200B8F7B5 /* SBJsonBase.m in Sources */,
-				835F20B6144DC9D200B8F7B5 /* SBJsonParser.m in Sources */,
-				835F20B7144DC9D200B8F7B5 /* SBJsonWriter.m in Sources */,
 				835F2238144DF47700B8F7B5 /* MiltonTabBarController.m in Sources */,
 				835B4D64144EF48900F2A535 /* MWFeedInfo.m in Sources */,
 				835B4D65144EF48900F2A535 /* MWFeedItem.m in Sources */,
@@ -1267,16 +1260,19 @@
 		83B7685D144CD79E00D160F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
 				INFOPLIST_FILE = "Milton/Milton-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Milton/App47\"",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1284,16 +1280,19 @@
 		83B7685E144CD79E00D160F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
 				INFOPLIST_FILE = "Milton/Milton-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Milton/App47\"",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
