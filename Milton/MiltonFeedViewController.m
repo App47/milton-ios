@@ -67,7 +67,9 @@
   // Return the number of sections.
   return 1;
 }
-
+- (void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [EmbeddedAgent sendGenericEvent:@"Click row"];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return [[self feedItems] count];
 }

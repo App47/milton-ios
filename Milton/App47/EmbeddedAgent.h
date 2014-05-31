@@ -35,6 +35,7 @@
 // See https://cirrus.app47.com/resource_center for more information.
 
 + (void) configureAgentWithAppID:(NSString *) appID;
++ (void) configureAgentWithAppID:(NSString *) appID withSettings:(NSDictionary *) settings;
 
 // Use configureAgentWithSettingsFilePath to load the fully qualified file path (plist file) 
 // containing all default agent settings, including the app id.
@@ -103,6 +104,15 @@
 // Retrieve all group names and all keys for a given group.
 + (NSArray *) configurationGroupNames;
 + (NSArray *) allKeysForConfigurationGroup:(NSString *) groupName;
+// Return a NSDictionary for the given group name. The NSDictionary will have an entry for each kev value pair
+// listed on the Admin UI web site. As expected, the NSDictionary key will be the key from
+// the AdminUI and the NSDictionary value will be the value. To loop through the dictionary and print
+// out it's contents:
+//  NSDictionary *groupData = [EmbeddedAgent configurationGroupAsDictionary:groupName];
+//  for (NSString *key in [groupData allKeys])
+//    NSLog(@"Key %@ - value %@", key, [groupData valueForKey:key]);
+
++ (NSDictionary *) configurationGroupAsDictionary:(NSString *) groupName;
 
 // Retrieve a configuration item as a string.
 + (NSString *) configurationStringForKey:(NSString *) key group:(NSString *)group;
@@ -155,11 +165,13 @@
 // Retrieve a configuration item as a file, the file is wrapped in an NSData object and can be used for 
 // webviews, UIImages and the ilk.
 + (NSData *) configurationFileForKey:(NSString *) key group:(NSString *) group;
++ (NSString *) configurationFilePathForKey:(NSString *) key group:(NSString *) group;
 // Retrieve a configuration value by key only. If more than one configuration group has the requested 
 // key, the value in the first configuration group is returned. Order of the configuration groups is
 // arbitrary. See + (NSArray *) configurationObjectsForKey:(NSString *) key for a list of all values
 // for a given configuration item.
 + (NSData *) configurationFileForKey:(NSString *) key;
++ (NSString *) configurationFilePathForKey:(NSString *) key;
 
 
 // Retrieve a configuration item as a base object.
@@ -198,6 +210,8 @@ extern NSString * const EmbeddedAgentAppConfigurationGroupDidChange;
 
 //////////////////////////////////////////////////////////////////
 // Logging.
+
++ (void) sendCachedData;
 
 
 + (void) logMessage:(NSString *) message 

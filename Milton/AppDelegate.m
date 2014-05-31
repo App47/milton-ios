@@ -20,7 +20,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [EmbeddedAgent configureAgent];
-  [EmbeddedAgent InstallExceptionHandlers];
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.tabBarController = [[MiltonTabBarController alloc] init];

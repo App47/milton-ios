@@ -51,7 +51,11 @@
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+<<<<<<< HEAD
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+=======
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+>>>>>>> release/R2014-05
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
