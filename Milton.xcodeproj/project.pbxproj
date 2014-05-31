@@ -257,19 +257,6 @@
 		835F209E144DC9D200B8F7B5 /* GTMObjC2Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMObjC2Runtime.h; sourceTree = "<group>"; };
 		835F209F144DC9D200B8F7B5 /* GTMStackTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMStackTrace.h; sourceTree = "<group>"; };
 		835F20A0144DC9D200B8F7B5 /* GTMStackTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMStackTrace.m; sourceTree = "<group>"; };
-		835F20A2144DC9D200B8F7B5 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		835F20A3144DC9D200B8F7B5 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		835F20A4144DC9D200B8F7B5 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		835F20A5144DC9D200B8F7B5 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		835F20A6144DC9D200B8F7B5 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
-		835F20A7144DC9D200B8F7B5 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		835F20A8144DC9D200B8F7B5 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
-		835F20A9144DC9D200B8F7B5 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		835F20AA144DC9D200B8F7B5 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
-		835F20AB144DC9D200B8F7B5 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		835F20AC144DC9D200B8F7B5 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		835F20AD144DC9D200B8F7B5 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		835F20AE144DC9D200B8F7B5 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		835F20AF144DC9D200B8F7B5 /* libEmbeddedAgent.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgent.a; sourceTree = "<group>"; };
 		835F20B9144DCC0F00B8F7B5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		835F20BC144DF38500B8F7B5 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
@@ -536,7 +523,6 @@
 				835F209A144DC9D200B8F7B5 /* EmbeddedAgent.h */,
 				835F209B144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist */,
 				835F209C144DC9D200B8F7B5 /* GoogleToolbox */,
-				835F20A1144DC9D200B8F7B5 /* JSON */,
 				835F20AF144DC9D200B8F7B5 /* libEmbeddedAgent.a */,
 			);
 			name = App47;
@@ -552,26 +538,6 @@
 				835F20A0144DC9D200B8F7B5 /* GTMStackTrace.m */,
 			);
 			path = GoogleToolbox;
-			sourceTree = "<group>";
-		};
-		835F20A1144DC9D200B8F7B5 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				835F20A2144DC9D200B8F7B5 /* JSON.h */,
-				835F20A3144DC9D200B8F7B5 /* NSObject+SBJSON.h */,
-				835F20A4144DC9D200B8F7B5 /* NSObject+SBJSON.m */,
-				835F20A5144DC9D200B8F7B5 /* NSString+SBJSON.h */,
-				835F20A6144DC9D200B8F7B5 /* NSString+SBJSON.m */,
-				835F20A7144DC9D200B8F7B5 /* SBJSON.h */,
-				835F20A8144DC9D200B8F7B5 /* SBJSON.m */,
-				835F20A9144DC9D200B8F7B5 /* SBJsonBase.h */,
-				835F20AA144DC9D200B8F7B5 /* SBJsonBase.m */,
-				835F20AB144DC9D200B8F7B5 /* SBJsonParser.h */,
-				835F20AC144DC9D200B8F7B5 /* SBJsonParser.m */,
-				835F20AD144DC9D200B8F7B5 /* SBJsonWriter.h */,
-				835F20AE144DC9D200B8F7B5 /* SBJsonWriter.m */,
-			);
-			path = JSON;
 			sourceTree = "<group>";
 		};
 		835F20BB144DF38500B8F7B5 /* tab-images */ = {
