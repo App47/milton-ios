@@ -6,9 +6,9 @@
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not
 //  use this file except in compliance with the License.  You may obtain a copy
 //  of the License at
-// 
+//
 //  http://www.apache.org/licenses/LICENSE-2.0
-// 
+//
 //  Unless required by applicable law or agreed to in writing, software
 //  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
 //  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
@@ -34,25 +34,26 @@ struct GTMClassDescription {
 
 static struct GTMClassDescription *GTMClassDescriptions(NSUInteger *total_count) {
   int class_count = objc_getClassList(nil, 0);
-  struct GTMClassDescription *class_descs 
-    = calloc(class_count, sizeof(struct GTMClassDescription));
+  struct GTMClassDescription *class_descs
+  = calloc(class_count, sizeof(struct GTMClassDescription));
   if (class_descs) {
     Class *classes = calloc(class_count, sizeof(Class));
     if (classes) {
       objc_getClassList(classes, class_count);
       for (int i = 0; i < class_count; ++i) {
-        class_descs[i].class_methods 
-          = class_copyMethodList(object_getClass(classes[i]), 
-                                 &class_descs[i].class_method_count);
-        class_descs[i].instance_methods 
-          = class_copyMethodList(classes[i], 
-                                 &class_descs[i].instance_method_count);
+        class_descs[i].class_methods
+        = class_copyMethodList(object_getClass(classes[i]),
+                               &class_descs[i].class_method_count);
+        class_descs[i].instance_methods
+        = class_copyMethodList(classes[i],
+                               &class_descs[i].instance_method_count);
         class_descs[i].class_name = class_getName(classes[i]);
       }
       free(classes);
     } else {
       // COV_NF_START - Don't know how to force this in a unittest
       free(class_descs);
+      class_descs = NULL;
       class_count = 0;
       // COV_NF_END
     }
@@ -63,7 +64,7 @@ static struct GTMClassDescription *GTMClassDescriptions(NSUInteger *total_count)
   return class_descs;
 }
 
-static void GTMFreeClassDescriptions(struct GTMClassDescription *class_descs, 
+static void GTMFreeClassDescriptions(struct GTMClassDescription *class_descs,
                                      NSUInteger count) {
   if (!class_descs) return;
   for (NSUInteger i = 0; i < count; ++i) {
@@ -87,8 +88,11 @@ static NSUInteger GTMGetStackAddressDescriptorsForAddresses(void *pcs[],
   // Get our obj-c class descriptions. This is expensive, so we do it once
   // at the top. We go through this because dladdr doesn't work with
   // obj methods.
-  struct GTMClassDescription *class_descs 
-    = GTMClassDescriptions(&class_desc_count);
+  struct GTMClassDescription *class_descs
+  = GTMClassDescriptions(&class_desc_count);
+  if (class_descs == NULL) {
+    class_desc_count = 0;
+  }
   
   // Iterate through the stack.
   for (NSUInteger i = 0; i < count; ++i) {
@@ -102,8 +106,8 @@ static NSUInteger GTMGetStackAddressDescriptorsForAddresses(void *pcs[],
     for (NSUInteger j = 0; j < class_desc_count; ++j) {
       // First check the class methods.
       for (NSUInteger k = 0; k < class_descs[j].class_method_count; ++k) {
-        IMP imp = method_getImplementation(class_descs[j].class_methods[k]);
-        if (imp <= (IMP)currDesc->address) {
+        void *imp = (void *)method_getImplementation(class_descs[j].class_methods[k]);
+        if (imp <= currDesc->address) {
           size_t diff = (size_t)currDesc->address - (size_t)imp;
           if (diff < smallest_diff) {
             best_method = class_descs[j].class_methods[k];
@@ -115,8 +119,8 @@ static NSUInteger GTMGetStackAddressDescriptorsForAddresses(void *pcs[],
       }
       // Then check the instance methods.
       for (NSUInteger k = 0; k < class_descs[j].instance_method_count; ++k) {
-        IMP imp = method_getImplementation(class_descs[j].instance_methods[k]);
-        if (imp <= (IMP)currDesc->address) {
+        void *imp = (void *)method_getImplementation(class_descs[j].instance_methods[k]);
+        if (imp <= currDesc->address) {
           size_t diff = (size_t)currDesc->address - (size_t)imp;
           if (diff < smallest_diff) {
             best_method = class_descs[j].instance_methods[k];
@@ -172,24 +176,24 @@ static NSString *GTMStackTraceFromAddressDescriptors(struct GTMAddressDescriptor
       fileName = @"??";
     }
     if (descs[i].class_name) {
-      [trace appendFormat:@"#%-2u %-35s %0*p %s[%s %s]",
-       i,
+      [trace appendFormat:@"#%-2lu %-35s %0*lX %s[%s %s]",
+       (unsigned long)i,
        [fileName UTF8String],
-       // sizeof(void*) * 2 is the length of the hex address (32 vs 64) and + 2 
+       // sizeof(void*) * 2 is the length of the hex address (32 vs 64) and + 2
        // for the 0x prefix
-       sizeof(void *) * 2 + 2, 
-       descs[i].address, 
+       (int)(sizeof(void *) * 2 + 2),
+       (unsigned long)descs[i].address,
        (descs[i].is_class_method ? "+" : "-"),
        descs[i].class_name,
        (descs[i].symbol ? descs[i].symbol : "??")];
     } else {
-      [trace appendFormat:@"#%-2u %-35s %0*p %s()",
-       i, 
+      [trace appendFormat:@"#%-2lu %-35s %0*lX %s()",
+       (unsigned long)i,
        [fileName UTF8String],
-       // sizeof(void*) * 2 is the length of the hex address (32 vs 64) and + 2 
+       // sizeof(void*) * 2 is the length of the hex address (32 vs 64) and + 2
        // for the 0x prefix
-       sizeof(void *) * 2 + 2,
-       descs[i].address,
+       (int)(sizeof(void *) * 2 + 2),
+       (unsigned long)descs[i].address,
        (descs[i].symbol ? descs[i].symbol : "??")];
     }
   }
@@ -217,7 +221,7 @@ struct GTMStackFrame {
 // picking off program counters and other saved frame pointers.  This works
 // great on i386, but PPC requires a little more work because the PC (or link
 // register) isn't always stored on the stack.
-//   
+//
 NSUInteger GTMGetStackProgramCounters(void *outPcs[], NSUInteger count) {
   if (!outPcs || (count < 1)) return 0;
   
@@ -230,7 +234,7 @@ NSUInteger GTMGetStackProgramCounters(void *outPcs[], NSUInteger count) {
 #else
 #error architecture not supported
 #endif
-
+  
   NSUInteger level = 0;
   while (level < count) {
     if (fp == NULL) {
@@ -246,14 +250,14 @@ NSUInteger GTMGetStackProgramCounters(void *outPcs[], NSUInteger count) {
 }
 #endif  // MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_5
 
-NSUInteger GTMGetStackAddressDescriptors(struct GTMAddressDescriptor outDescs[], 
+NSUInteger GTMGetStackAddressDescriptors(struct GTMAddressDescriptor outDescs[],
                                          NSUInteger count) {
   if (count < 1 || !outDescs) return 0;
   NSUInteger result = 0;
   
 #if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_5
   // Before 10.5, we collect the stack ourselves.
-
+  
   void **pcs = calloc(count, sizeof(void*));
   if (!pcs) return 0;
   
@@ -261,9 +265,9 @@ NSUInteger GTMGetStackAddressDescriptors(struct GTMAddressDescriptor outDescs[],
   
   result = GTMGetStackAddressDescriptorsForAddresses(pcs, outDescs, newSize);
   free(pcs);
-
+  
 #else  //  MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_5
-  // Use +[NSThread callStackReturnAddresses]
+       // Use +[NSThread callStackReturnAddresses]
   
   NSArray *addresses = [NSThread callStackReturnAddresses];
   NSUInteger addrCount = [addresses count];
@@ -285,7 +289,7 @@ NSUInteger GTMGetStackAddressDescriptors(struct GTMAddressDescriptor outDescs[],
     free(pcs);
   }
 #endif  // MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_5
-
+  
   return result;
 }
 
@@ -295,14 +299,14 @@ NSString *GTMStackTrace(void) {
   
 #if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_5
   // Before 10.5, we collect the stack ourselves.
-
+  
   // The maximum number of stack frames that we will walk.  We limit this so
   // that super-duper recursive functions (or bugs) don't send us for an
   // infinite loop.
   struct GTMAddressDescriptor descs[100];
   size_t depth = sizeof(descs) / sizeof(struct GTMAddressDescriptor);
   depth = GTMGetStackAddressDescriptors(descs, depth);
-
+  
   // Start at the second item so that GTMStackTrace and it's utility calls (of
   // which there is currently 1) is not included in the output.
   const size_t kTracesToStrip = 2;
@@ -311,14 +315,14 @@ NSString *GTMStackTrace(void) {
                                                  (depth - kTracesToStrip));
   }
 #else  //  MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_5
-  // Use +[NSThread callStackReturnAddresses]
-
+       // Use +[NSThread callStackReturnAddresses]
+  
   NSArray *addresses = [NSThread callStackReturnAddresses];
   NSUInteger count = [addresses count];
   if (count) {
     void **pcs = calloc(count, sizeof(void*));
     struct GTMAddressDescriptor *descs
-      = calloc(count, sizeof(struct GTMAddressDescriptor));
+    = calloc(count, sizeof(struct GTMAddressDescriptor));
     if (pcs && descs) {
       void **pcsScanner = pcs;
       for (NSNumber *address in addresses) {
@@ -341,11 +345,13 @@ NSString *GTMStackTrace(void) {
     free(descs);
   }
 #endif  // MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_5
-
+  
   return result;
 }
 
-#if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_5
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_5 || \
+(defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && \
+(__IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_2_0))
 
 NSString *GTMStackTraceFromException(NSException *e) {
   NSString *trace = @"";
@@ -356,7 +362,7 @@ NSString *GTMStackTraceFromException(NSException *e) {
   if (count) {
     void **pcs = calloc(count, sizeof(void*));
     struct GTMAddressDescriptor *descs
-      = calloc(count, sizeof(struct GTMAddressDescriptor));
+    = calloc(count, sizeof(struct GTMAddressDescriptor));
     if (pcs && descs) {
       void **pcsScanner = pcs;
       for (NSNumber *address in addresses) {
@@ -377,3 +383,4 @@ NSString *GTMStackTraceFromException(NSException *e) {
 }
 
 #endif  // MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_5
+        //__IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_2_0
