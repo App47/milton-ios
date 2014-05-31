@@ -53,7 +53,9 @@
   // Return the number of sections.
   return 1;
 }
-
+- (void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [EmbeddedAgent sendGenericEvent:@"Click row"];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return [[self feedItems] count];
 }
@@ -111,7 +113,7 @@
   [EmbeddedAgent endTimedEvent:[self feedLoadEventID]];
 }
 - (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error{
-  NSString *eventName = [NSString stringWithFormat:@"Feed (@%) failed to load",[[[self navigationController] tabBarItem] title]];
+  NSString *eventName = [NSString stringWithFormat:@"Feed (%@) failed to load",[[[self navigationController] tabBarItem] title]];
   [EmbeddedAgent sendGenericEvent:eventName];
   EALogErrorWithError(error, @"Unable to parse feed %@", [self url]);
   UIAlertView *view = [[UIAlertView alloc]initWithTitle:@"Unable to parse feed" 
