@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>application id</key>
-	<string>5388c9f5396bd20adf000022</string>
+	<string>53c2e57e12d3bd4125000105</string>
 	<key>configuration update frequency</key>
 	<real>1e-05</real>
 	<key>delay data upload interval</key>
@@ -12,8 +12,6 @@
 	<true/>
 	<key>show network activity</key>
 	<true/>
-	<key>configuration endpoint</key>
-	<string>https://api.app47.net</string>
 	<key>agent logging level</key>
 	<string>debug</string>
 	<key>upload on exit</key>
