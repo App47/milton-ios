@@ -216,7 +216,6 @@
 		83B76824144CD79D00D160F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83B76822144CD79D00D160F4 /* InfoPlist.strings */; };
 		83B76826144CD79D00D160F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B76825144CD79D00D160F4 /* main.m */; };
 		83B7682A144CD79D00D160F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B76829144CD79D00D160F4 /* AppDelegate.m */; };
-		83B7684C144CD79E00D160F4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B7684B144CD79E00D160F4 /* SenTestingKit.framework */; };
 		83B7684D144CD79E00D160F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B76819144CD79D00D160F4 /* UIKit.framework */; };
 		83B7684E144CD79E00D160F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B7681B144CD79D00D160F4 /* Foundation.framework */; };
 		83B76856144CD79E00D160F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83B76854144CD79E00D160F4 /* InfoPlist.strings */; };
@@ -461,8 +460,7 @@
 		83B76827144CD79D00D160F4 /* Milton-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Milton-Prefix.pch"; sourceTree = "<group>"; };
 		83B76828144CD79D00D160F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83B76829144CD79D00D160F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		83B7684A144CD79E00D160F4 /* MiltonTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiltonTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		83B7684B144CD79E00D160F4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		83B7684A144CD79E00D160F4 /* MiltonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiltonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B76853144CD79E00D160F4 /* MiltonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MiltonTests-Info.plist"; sourceTree = "<group>"; };
 		83B76855144CD79E00D160F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83B76857144CD79E00D160F4 /* MiltonTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiltonTests.h; sourceTree = "<group>"; };
@@ -486,7 +484,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83B7684C144CD79E00D160F4 /* SenTestingKit.framework in Frameworks */,
 				83B7684D144CD79E00D160F4 /* UIKit.framework in Frameworks */,
 				83B7684E144CD79E00D160F4 /* Foundation.framework in Frameworks */,
 			);
@@ -752,7 +749,7 @@
 			isa = PBXGroup;
 			children = (
 				83B76815144CD79D00D160F4 /* Milton.app */,
-				83B7684A144CD79E00D160F4 /* MiltonTests.octest */,
+				83B7684A144CD79E00D160F4 /* MiltonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -764,7 +761,6 @@
 				83B76819144CD79D00D160F4 /* UIKit.framework */,
 				83B7681B144CD79D00D160F4 /* Foundation.framework */,
 				83B7681D144CD79D00D160F4 /* CoreGraphics.framework */,
-				83B7684B144CD79E00D160F4 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -851,8 +847,8 @@
 			);
 			name = MiltonTests;
 			productName = MiltonTests;
-			productReference = 83B7684A144CD79E00D160F4 /* MiltonTests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productReference = 83B7684A144CD79E00D160F4 /* MiltonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -860,7 +856,8 @@
 		83B7680C144CD79D00D160F4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastTestingUpgradeCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = App47;
 				TargetAttributes = {
 					83B76814144CD79D00D160F4 = {
@@ -1175,7 +1172,9 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: App47, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: App47, Inc.";
-				SDKROOT = iphoneos7.1;
+				ENABLE_TESTABILITY = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -1186,7 +1185,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: App47, Inc.";
 				PROVISIONING_PROFILE = "3CFBD746-3EC9-4FE4-91AB-76F82B65C0B5";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3CFBD746-3EC9-4FE4-91AB-76F82B65C0B5";
-				SDKROOT = iphoneos7.1;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -1198,12 +1197,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
 				INFOPLIST_FILE = "Milton/Milton-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Milton/App47\"",
 				);
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app47.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1217,12 +1217,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
 				INFOPLIST_FILE = "Milton/Milton-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Milton/App47\"",
 				);
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app47.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1234,14 +1235,14 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Milton.app/Milton";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
 				INFOPLIST_FILE = "MiltonTests/MiltonTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app47.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -1251,14 +1252,14 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Milton.app/Milton";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
 				INFOPLIST_FILE = "MiltonTests/MiltonTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app47.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
