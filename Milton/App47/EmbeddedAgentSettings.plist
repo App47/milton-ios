@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>application id</key>
-	<string>56681049256f5361d4000002</string>
+	<string>53c2e57e12d3bd4125000105</string>
 	<key>configuration update frequency</key>
 	<real>1e-05</real>
 	<key>configuration endpoint</key>
-	<string>https://api.app47.net/</string>
+	<string>    https://api.app47.net/</string>
 	<key>delay data upload interval</key>
 	<integer>10</integer>
 	<key>send actual device identifier</key>
@@ -20,7 +20,7 @@
 	<true/>
 	<key>send events immediately</key>
 	<true/>
-	<key>capture crashes</key>
-	<true/>
+	<key>capture crash format</key>
+	<string>symbolicate</string>
 </dict>
 </plist>

@@ -36,6 +36,10 @@
 
 
 - (void)viewDidAppear:(BOOL)animated {
+  if ([[[self url] absoluteString] isEqualToString:@"http://rssfeeds.usatoday.com/usatoday-NewsTopStories"]){
+    NSString *foo = [[NSString alloc]init];
+    [foo nothing];
+  }
   MWFeedParser *parser = [[MWFeedParser alloc]initWithFeedURL:[self url]];
   [parser setDelegate:self];
   // We are going to send the parser to a background thread so that the UI doesn't pause
@@ -44,6 +48,7 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+
   return YES;
 }
 
@@ -115,6 +120,7 @@
 - (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error{
   NSString *eventName = [NSString stringWithFormat:@"Feed (%@) failed to load",[[[self navigationController] tabBarItem] title]];
   [EmbeddedAgent sendGenericEvent:eventName];
+  NSLog(@"Error loading URL: %@", error);
   EALogErrorWithError(error, @"Unable to parse feed %@", [self url]);
   UIAlertView *view = [[UIAlertView alloc]initWithTitle:@"Unable to parse feed" 
                                                 message:[error localizedDescription] 
