@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221C2C971E27C80900AEF7BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 221C2C961E27C80900AEF7BA /* Default-568h@2x.png */; };
+		22E30EAE1E27CF150014DE81 /* EmbeddedAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E30EAC1E27CEF30014DE81 /* EmbeddedAgent.framework */; };
+		22E30EAF1E27CF150014DE81 /* EmbeddedAgent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22E30EAC1E27CEF30014DE81 /* EmbeddedAgent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		835B4D64144EF48900F2A535 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D5E144EF48900F2A535 /* MWFeedInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		835B4D65144EF48900F2A535 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D60144EF48900F2A535 /* MWFeedItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		835B4D66144EF48900F2A535 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D62144EF48900F2A535 /* MWFeedParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -16,7 +19,6 @@
 		835B4D73144EF52900F2A535 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D72144EF52900F2A535 /* NSDate+InternetDateTime.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		835B4D76144EF5C600F2A535 /* MiltonFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D75144EF5C600F2A535 /* MiltonFeedViewController.m */; };
 		835F20B0144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 835F209B144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist */; };
-		835F20B8144DC9D200B8F7B5 /* libEmbeddedAgent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 835F20AF144DC9D200B8F7B5 /* libEmbeddedAgent.a */; };
 		835F20BA144DCC0F00B8F7B5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835F20B9144DCC0F00B8F7B5 /* CoreLocation.framework */; };
 		835F2179144DF38600B8F7B5 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 835F20BC144DF38500B8F7B5 /* add.png */; };
 		835F217A144DF38600B8F7B5 /* airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 835F20BD144DF38500B8F7B5 /* airplane.png */; };
@@ -219,7 +221,6 @@
 		83B7684E144CD79E00D160F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B7681B144CD79D00D160F4 /* Foundation.framework */; };
 		83B76856144CD79E00D160F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83B76854144CD79E00D160F4 /* InfoPlist.strings */; };
 		83B76859144CD79E00D160F4 /* MiltonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B76858144CD79E00D160F4 /* MiltonTests.m */; };
-		83E6A1651D032D9C00C03F0E /* libGMStackTrace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E6A1641D032D9C00C03F0E /* libGMStackTrace.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,7 +233,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		22E30EB01E27CF150014DE81 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				22E30EAF1E27CF150014DE81 /* EmbeddedAgent.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		221C2C961E27C80900AEF7BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		22E30EAC1E27CEF30014DE81 /* EmbeddedAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EmbeddedAgent.framework; sourceTree = "<group>"; };
 		835B4D5D144EF48900F2A535 /* MWFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedInfo.h; sourceTree = "<group>"; };
 		835B4D5E144EF48900F2A535 /* MWFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedInfo.m; sourceTree = "<group>"; };
 		835B4D5F144EF48900F2A535 /* MWFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedItem.h; sourceTree = "<group>"; };
@@ -250,9 +267,7 @@
 		835B4D72144EF52900F2A535 /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
 		835B4D74144EF5C600F2A535 /* MiltonFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiltonFeedViewController.h; sourceTree = "<group>"; };
 		835B4D75144EF5C600F2A535 /* MiltonFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiltonFeedViewController.m; sourceTree = "<group>"; };
-		835F209A144DC9D200B8F7B5 /* EmbeddedAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmbeddedAgent.h; sourceTree = "<group>"; };
 		835F209B144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmbeddedAgentSettings.plist; sourceTree = "<group>"; };
-		835F20AF144DC9D200B8F7B5 /* libEmbeddedAgent.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgent.a; sourceTree = "<group>"; };
 		835F20B9144DCC0F00B8F7B5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		835F20BC144DF38500B8F7B5 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		835F20BD144DF38500B8F7B5 /* airplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplane.png; sourceTree = "<group>"; };
@@ -461,7 +476,6 @@
 		83B76855144CD79E00D160F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83B76857144CD79E00D160F4 /* MiltonTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiltonTests.h; sourceTree = "<group>"; };
 		83B76858144CD79E00D160F4 /* MiltonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiltonTests.m; sourceTree = "<group>"; };
-		83E6A1641D032D9C00C03F0E /* libGMStackTrace.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGMStackTrace.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -469,12 +483,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83E6A1651D032D9C00C03F0E /* libGMStackTrace.a in Frameworks */,
+				22E30EAE1E27CF150014DE81 /* EmbeddedAgent.framework in Frameworks */,
 				835F20BA144DCC0F00B8F7B5 /* CoreLocation.framework in Frameworks */,
 				83B7681A144CD79D00D160F4 /* UIKit.framework in Frameworks */,
 				83B7681C144CD79D00D160F4 /* Foundation.framework in Frameworks */,
 				83B7681E144CD79D00D160F4 /* CoreGraphics.framework in Frameworks */,
-				835F20B8144DC9D200B8F7B5 /* libEmbeddedAgent.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,10 +528,8 @@
 		835F2099144DC9D200B8F7B5 /* App47 */ = {
 			isa = PBXGroup;
 			children = (
-				835F209A144DC9D200B8F7B5 /* EmbeddedAgent.h */,
+				22E30EAC1E27CEF30014DE81 /* EmbeddedAgent.framework */,
 				835F209B144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist */,
-				835F20AF144DC9D200B8F7B5 /* libEmbeddedAgent.a */,
-				83E6A1641D032D9C00C03F0E /* libGMStackTrace.a */,
 			);
 			name = App47;
 			path = Milton/App47;
@@ -769,6 +780,7 @@
 		83B76820144CD79D00D160F4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				221C2C961E27C80900AEF7BA /* Default-568h@2x.png */,
 				835F20BB144DF38500B8F7B5 /* tab-images */,
 				835B4D5C144EF48900F2A535 /* MWFeedParser */,
 				83B76821144CD79D00D160F4 /* Milton-Info.plist */,
@@ -808,6 +820,7 @@
 				83B76811144CD79D00D160F4 /* Sources */,
 				83B76812144CD79D00D160F4 /* Frameworks */,
 				83B76813144CD79D00D160F4 /* Resources */,
+				22E30EB01E27CF150014DE81 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -940,6 +953,7 @@
 				835F21B5144DF38600B8F7B5 /* envelope.png in Resources */,
 				835F21B6144DF38600B8F7B5 /* euro.png in Resources */,
 				835F21B7144DF38600B8F7B5 /* fast-forward.png in Resources */,
+				221C2C971E27C80900AEF7BA /* Default-568h@2x.png in Resources */,
 				835F21B8144DF38600B8F7B5 /* fastforward.png in Resources */,
 				835F21B9144DF38600B8F7B5 /* feed.png in Resources */,
 				835F21BA144DF38600B8F7B5 /* filing-cabinet.png in Resources */,
@@ -1185,10 +1199,15 @@
 				);
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Milton/App47",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
 				INFOPLIST_FILE = "Milton/Milton-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Milton/App47\"",
@@ -1212,10 +1231,15 @@
 				);
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Milton/App47",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Milton/Milton-Prefix.pch";
 				INFOPLIST_FILE = "Milton/Milton-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Milton/App47\"",

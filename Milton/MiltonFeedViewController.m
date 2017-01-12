@@ -8,7 +8,7 @@
 
 #import "MiltonFeedViewController.h"
 #import "MWFeedItem.h"
-#import "EmbeddedAgent.h"
+#import <EmbeddedAgent/EmbeddedAgent.h>
 
 @interface MiltonFeedViewController()
 @property (strong, nonatomic) NSURL *url;

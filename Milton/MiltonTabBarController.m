@@ -7,7 +7,7 @@
 //
 
 #import "MiltonTabBarController.h"
-#import "EmbeddedAgent.h"
+#import <EmbeddedAgent/EmbeddedAgent.h>
 #import "MiltonFeedViewController.h"
 
 

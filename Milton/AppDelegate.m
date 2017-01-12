@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "EmbeddedAgent.h"
+#import <EmbeddedAgent/EmbeddedAgent.h>
 #import "MiltonTabBarController.h"
 
 
