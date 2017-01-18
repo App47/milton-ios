@@ -240,6 +240,8 @@ extern NSString * const EmbeddedAgentRegistrationDidFail;
           exception:(NSException *) exception 
                tags:(NSArray *)tags;
 
+// Macros for logging, accessible from Objective-C
+//
 #define EALogDebug( format, ... ) [EmbeddedAgent logMessage:[NSString stringWithFormat:(format), ##__VA_ARGS__] fileName:[[NSString stringWithUTF8String:__FILE__] lastPathComponent] lineNumber:__LINE__ level:@"debug" error:nil exception:nil tags:nil]
 #define EALogDebugWithException(e,  format, ... ) [EmbeddedAgent logMessage:[NSString stringWithFormat:(format), ##__VA_ARGS__] fileName:[[NSString stringWithUTF8String:__FILE__] lastPathComponent] lineNumber:__LINE__ level:@"debug" error:nil exception:e tags:nil]
 #define EALogDebugWithError(err, format, ... ) [EmbeddedAgent logMessage:[NSString stringWithFormat:(format), ##__VA_ARGS__] fileName:[[NSString stringWithUTF8String:__FILE__] lastPathComponent] lineNumber:__LINE__ level:@"debug" error:err exception:nil tags:nil]
@@ -254,6 +256,7 @@ extern NSString * const EmbeddedAgentRegistrationDidFail;
 #define EALogInfoWithTags( arrayOfTags,format, ... ) [EmbeddedAgent logMessage:[NSString stringWithFormat:(format), ##__VA_ARGS__] fileName:[[NSString stringWithUTF8String:__FILE__] lastPathComponent] lineNumber:__LINE__ level:@"info" error:nil exception:nil  tags:arrayOfTags]
 #define EALogInfoWithTagsException(e, arrayOfTags, format, ... ) [EmbeddedAgent logMessage:[NSString stringWithFormat:(format), ##__VA_ARGS__] fileName:[[NSString stringWithUTF8String:__FILE__] lastPathComponent] lineNumber:__LINE__ level:@"info" error:nil exception:e tags:nil]
 #define EALogInfoWithTagsError(err, arrayOfTags, format, ... ) [EmbeddedAgent logMessage:[NSString stringWithFormat:(format), ##__VA_ARGS__] fileName:[[NSString stringWithUTF8String:__FILE__] lastPathComponent] lineNumber:__LINE__ level:@"info" error:err exception:nil tags:nil]
+
 
 #define EALogWarn( format, ... ) [EmbeddedAgent logMessage:[NSString stringWithFormat:(format), ##__VA_ARGS__] fileName:[[NSString stringWithUTF8String:__FILE__] lastPathComponent] lineNumber:__LINE__ level:@"warn"  error:nil exception:nil tags:nil]
 #define EALogWarnWithException(e,  format, ... ) [EmbeddedAgent logMessage:[NSString stringWithFormat:(format), ##__VA_ARGS__] fileName:[[NSString stringWithUTF8String:__FILE__] lastPathComponent] lineNumber:__LINE__ level:@"warn" error:nil exception:e tags:nil]
@@ -270,6 +273,42 @@ extern NSString * const EmbeddedAgentRegistrationDidFail;
 #define EALogErrorWithTagsError(err, tags,format, ... ) [EmbeddedAgent logMessage:[NSString stringWithFormat:(format), ##__VA_ARGS__] fileName:[[NSString stringWithUTF8String:__FILE__] lastPathComponent] lineNumber:__LINE__ level:@"error" error:err exception:nil tags:tags]
 #define EALogErrorWithTagsException(ex, arrayOfTags,format, ... ) [EmbeddedAgent logMessage:[NSString stringWithFormat:(format), ##__VA_ARGS__] fileName:[[NSString stringWithUTF8String:__FILE__] lastPathComponent] lineNumber:__LINE__ level:@"error" error:nil exception:ex tags:arrayOfTags]
 
+
 #define EALogCrashException(ex, format, ... ) [EmbeddedAgent logMessage:[NSString stringWithFormat:(format), ##__VA_ARGS__] fileName:[[NSString stringWithUTF8String:__FILE__] lastPathComponent] lineNumber:__LINE__ level:@"crash" error:nil exception:ex  tags:nil]
+
+// Helper methods for logging, best used from Swift
+//
++ (void)logDebugWithMessage:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logDebugWithException:(NSException*)exception message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logDebugWithError:(NSError*)error message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logDebugWithTags:(NSArray*)tags message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logDebugWithException:(NSException*)exception tags:(NSArray*)tags message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logDebugWithError:(NSError*)error tags:(NSArray*)tags message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
+
+
++ (void)logInfoWithMessage:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logInfoWithException:(NSException*)exception message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logInfoWithError:(NSError*)error message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logInfoWithTags:(NSArray*)tags message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logInfoWithException:(NSException*)exception tags:(NSArray*)tags message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logInfoWithError:(NSError*)error tags:(NSArray*)tags message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
+
+
++ (void)logWarningWithMessage:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logWarningWithException:(NSException*)exception message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logWarningWithError:(NSError*)error message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logWarningWithTags:(NSArray*)tags message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logWarningWithException:(NSException*)exception tags:(NSArray*)tags message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logWarningWithError:(NSError*)error tags:(NSArray*)tags message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
+
+
++ (void)logErrorWithMessage:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logErrorWithException:(NSException*)exception message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logErrorWithError:(NSError*)error message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logErrorWithTags:(NSArray*)tags message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logErrorWithException:(NSException*)exception tags:(NSArray*)tags message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
++ (void)logErrorWithError:(NSError*)error tags:(NSArray*)tags message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
+
++ (void)logCrashWithException:(NSException*)exception message:(NSString*)message fileName:(NSString*)fileName lineNumber:(int)lineNumber;
 
 @end
