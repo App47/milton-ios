@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		22025CA81E2FCA880092A3B8 /* EmbeddedAgentSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22025CA61E2FCA880092A3B8 /* EmbeddedAgentSettings.plist */; };
-		22025CAC1E2FCCE70092A3B8 /* EmbeddedAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22025CA51E2FCA880092A3B8 /* EmbeddedAgent.framework */; };
-		22025CAD1E2FCCE70092A3B8 /* EmbeddedAgent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22025CA51E2FCA880092A3B8 /* EmbeddedAgent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		22025CB61E2FD64F0092A3B8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 22025CB21E2FD64F0092A3B8 /* icon.png */; };
 		22025CB71E2FD64F0092A3B8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22025CB31E2FD64F0092A3B8 /* icon@2x.png */; };
 		22025CB81E2FD64F0092A3B8 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 22025CB41E2FD64F0092A3B8 /* icon120.png */; };
@@ -235,7 +233,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				22025CAD1E2FCCE70092A3B8 /* EmbeddedAgent.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,7 +242,6 @@
 /* Begin PBXFileReference section */
 		0A80C1C93E42CAFB5B397246 /* Pods-SwiftMiltonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMiltonTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMiltonTests/Pods-SwiftMiltonTests.release.xcconfig"; sourceTree = "<group>"; };
 		16E6ED856F18687EE04CC31B /* Pods-SwiftMilton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMilton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMilton/Pods-SwiftMilton.debug.xcconfig"; sourceTree = "<group>"; };
-		22025CA51E2FCA880092A3B8 /* EmbeddedAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EmbeddedAgent.framework; path = App47/EmbeddedAgent.framework; sourceTree = "<group>"; };
 		22025CA61E2FCA880092A3B8 /* EmbeddedAgentSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = EmbeddedAgentSettings.plist; path = App47/EmbeddedAgentSettings.plist; sourceTree = "<group>"; };
 		22025CB21E2FD64F0092A3B8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = icons/icon.png; sourceTree = "<group>"; };
 		22025CB31E2FD64F0092A3B8 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "icons/icon@2x.png"; sourceTree = "<group>"; };
@@ -467,7 +463,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22025CAC1E2FCCE70092A3B8 /* EmbeddedAgent.framework in Frameworks */,
 				5B16FBAA24E6CCFB1C101BC3 /* Pods_SwiftMilton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,7 +739,6 @@
 		221C2C741E26B57200AEF7BA /* App47 */ = {
 			isa = PBXGroup;
 			children = (
-				22025CA51E2FCA880092A3B8 /* EmbeddedAgent.framework */,
 				22025CA61E2FCA880092A3B8 /* EmbeddedAgentSettings.plist */,
 			);
 			name = App47;
