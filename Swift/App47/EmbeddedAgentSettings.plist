@@ -3,11 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>application id</key>
-	<string>4e552727a2f8fd000100006f</string>
+	<string>5887955ee609983cf6001de9</string>
 	<key>configuration update frequency</key>
 	<real>1e-05</real>
-	<key>configuration endpoint</key>
-	<string>    https://api.app47.net/</string>
 	<key>delay data upload interval</key>
 	<integer>10</integer>
 	<key>send actual device identifier</key>

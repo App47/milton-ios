@@ -12,9 +12,9 @@
 		22025CC11E2FD7EF0092A3B8 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 22025CBD1E2FD7EF0092A3B8 /* icon120.png */; };
 		22025CC21E2FD7EF0092A3B8 /* icon180.png in Resources */ = {isa = PBXBuildFile; fileRef = 22025CBE1E2FD7EF0092A3B8 /* icon180.png */; };
 		22025CC41E2FD81D0092A3B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22025CC31E2FD81D0092A3B8 /* Assets.xcassets */; };
+		220A63781E38FE4400B0A909 /* EmbeddedAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220A63761E38FE3A00B0A909 /* EmbeddedAgent.framework */; };
+		220A63791E38FE4400B0A909 /* EmbeddedAgent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 220A63761E38FE3A00B0A909 /* EmbeddedAgent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		221C2C971E27C80900AEF7BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 221C2C961E27C80900AEF7BA /* Default-568h@2x.png */; };
-		22E30EAE1E27CF150014DE81 /* EmbeddedAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E30EAC1E27CEF30014DE81 /* EmbeddedAgent.framework */; };
-		22E30EAF1E27CF150014DE81 /* EmbeddedAgent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22E30EAC1E27CEF30014DE81 /* EmbeddedAgent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		835B4D64144EF48900F2A535 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D5E144EF48900F2A535 /* MWFeedInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		835B4D65144EF48900F2A535 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D60144EF48900F2A535 /* MWFeedItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		835B4D66144EF48900F2A535 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D62144EF48900F2A535 /* MWFeedParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -238,13 +238,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		22E30EB01E27CF150014DE81 /* Embed Frameworks */ = {
+		223E641E1E37EC7400B404C6 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				22E30EAF1E27CF150014DE81 /* EmbeddedAgent.framework in Embed Frameworks */,
+				220A63791E38FE4400B0A909 /* EmbeddedAgent.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +257,8 @@
 		22025CBD1E2FD7EF0092A3B8 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon120.png; path = Milton/icons/icon120.png; sourceTree = "<group>"; };
 		22025CBE1E2FD7EF0092A3B8 /* icon180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon180.png; path = Milton/icons/icon180.png; sourceTree = "<group>"; };
 		22025CC31E2FD81D0092A3B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
+		220A63761E38FE3A00B0A909 /* EmbeddedAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EmbeddedAgent.framework; sourceTree = "<group>"; };
 		221C2C961E27C80900AEF7BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
-		22E30EAC1E27CEF30014DE81 /* EmbeddedAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EmbeddedAgent.framework; sourceTree = "<group>"; };
 		835B4D5D144EF48900F2A535 /* MWFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedInfo.h; sourceTree = "<group>"; };
 		835B4D5E144EF48900F2A535 /* MWFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedInfo.m; sourceTree = "<group>"; };
 		835B4D5F144EF48900F2A535 /* MWFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedItem.h; sourceTree = "<group>"; };
@@ -491,7 +491,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22E30EAE1E27CF150014DE81 /* EmbeddedAgent.framework in Frameworks */,
+				220A63781E38FE4400B0A909 /* EmbeddedAgent.framework in Frameworks */,
 				835F20BA144DCC0F00B8F7B5 /* CoreLocation.framework in Frameworks */,
 				83B7681A144CD79D00D160F4 /* UIKit.framework in Frameworks */,
 				83B7681C144CD79D00D160F4 /* Foundation.framework in Frameworks */,
@@ -548,7 +548,7 @@
 		835F2099144DC9D200B8F7B5 /* App47 */ = {
 			isa = PBXGroup;
 			children = (
-				22E30EAC1E27CEF30014DE81 /* EmbeddedAgent.framework */,
+				220A63761E38FE3A00B0A909 /* EmbeddedAgent.framework */,
 				835F209B144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist */,
 			);
 			name = App47;
@@ -841,7 +841,7 @@
 				83B76811144CD79D00D160F4 /* Sources */,
 				83B76812144CD79D00D160F4 /* Frameworks */,
 				83B76813144CD79D00D160F4 /* Resources */,
-				22E30EB01E27CF150014DE81 /* Embed Frameworks */,
+				223E641E1E37EC7400B404C6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
