@@ -1,0 +1,6 @@
+framework module Pods_SwiftMiltonTests {
+  umbrella header "Pods-SwiftMiltonTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
