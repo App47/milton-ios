@@ -184,10 +184,10 @@ class MiltonFeedViewController: UITableViewController, MWFeedParserDelegate {
         EmbeddedAgent.logErrorWithError(error, message: (String.localizedStringWithFormat("Unable to parse feed %@", (self.url?.absoluteString)!)), fileName: #file, lineNumber: #line)
         
         // create an alert and show it on the main thread
-        let view:UIAlertView = UIAlertView.init(title: "Unable to parse feed", message: error.localizedDescription, delegate: nil, cancelButtonTitle: "OK")
-        DispatchQueue.main.async {
-            view.show()
-        }
+        // create an alert and show it on the main thread
+        let alert:UIAlertController = UIAlertController.init(title: "Unable to parse feed", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title:"OK", style:UIAlertActionStyle.cancel, handler:nil))
+        present(alert, animated: true, completion:nil)
     }
 
 }

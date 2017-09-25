@@ -842,6 +842,7 @@
 				83B76812144CD79D00D160F4 /* Frameworks */,
 				83B76813144CD79D00D160F4 /* Resources */,
 				223E641E1E37EC7400B404C6 /* Embed Frameworks */,
+				22E2D6931F798AFC00124B5D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1120,6 +1121,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		22E2D6931F798AFC00124B5D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/EmbeddedAgent.framework/ios-strip-frameworks.sh\" EmbeddedAgent";
+		};
 		83B76848144CD79E00D160F4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
