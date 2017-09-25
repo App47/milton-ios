@@ -13,12 +13,12 @@ import EmbeddedAgent
 
 class MiltonFeedViewController: UITableViewController, MWFeedParserDelegate {
     
-    var url:URL?
-    var feedItems:NSMutableArray?
-    var feedLoadEventID:String?
+    @objc var url:URL?
+    @objc var feedItems:NSMutableArray?
+    @objc var feedLoadEventID:String?
     
 
-    convenience init(_url:URL) {
+    @objc convenience init(_url:URL) {
         self.init(style:UITableViewStyle.plain)
         url = _url
         feedItems = NSMutableArray()
@@ -143,7 +143,7 @@ class MiltonFeedViewController: UITableViewController, MWFeedParserDelegate {
     
     // Feed Parser
     
-    func addFeedItem(item:MWFeedItem) {
+    @objc func addFeedItem(item:MWFeedItem) {
         let path = IndexPath.init(row:(feedItems?.count)!, section:0)
         self.tableView.beginUpdates()
         feedItems?.add(item)

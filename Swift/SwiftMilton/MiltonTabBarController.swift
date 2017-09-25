@@ -25,7 +25,7 @@ class MiltonTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-    func loadStaticTabs() {
+    @objc func loadStaticTabs() {
         var viewControllers:[UIViewController] = []
         var controller:MiltonFeedViewController = MiltonFeedViewController.init(_url:(URL.init(string: "http://www.app47.com/feed/"))!)
         var navController:UINavigationController = UINavigationController.init(rootViewController: controller)
@@ -99,7 +99,7 @@ class MiltonTabBarController: UITabBarController {
     // |  url          | http://www.app47.com/feed/       |
     // |--------------------------------------------------|
     // 
-    func updateTabsFromConfiguration() {
+    @objc func updateTabsFromConfiguration() {
         
         // make sure we are on the main thread, if not get us there
         if (!Thread.isMainThread){
