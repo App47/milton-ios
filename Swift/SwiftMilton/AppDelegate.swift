@@ -13,7 +13,7 @@ import EmbeddedAgent
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarDelegate {
 
     var window: UIWindow?
-    var tabBarController: MiltonTabBarController?
+    @objc var tabBarController: MiltonTabBarController?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

@@ -13,12 +13,12 @@ import EmbeddedAgent
 
 class MiltonFeedViewController: UITableViewController, MWFeedParserDelegate {
     
-    var url:URL?
-    var feedItems:NSMutableArray?
-    var feedLoadEventID:String?
+    @objc var url:URL?
+    @objc var feedItems:NSMutableArray?
+    @objc var feedLoadEventID:String?
     
 
-    convenience init(_url:URL) {
+    @objc convenience init(_url:URL) {
         self.init(style:UITableViewStyle.plain)
         url = _url
         feedItems = NSMutableArray()
@@ -143,7 +143,7 @@ class MiltonFeedViewController: UITableViewController, MWFeedParserDelegate {
     
     // Feed Parser
     
-    func addFeedItem(item:MWFeedItem) {
+    @objc func addFeedItem(item:MWFeedItem) {
         let path = IndexPath.init(row:(feedItems?.count)!, section:0)
         self.tableView.beginUpdates()
         feedItems?.add(item)
@@ -184,10 +184,10 @@ class MiltonFeedViewController: UITableViewController, MWFeedParserDelegate {
         EmbeddedAgent.logErrorWithError(error, message: (String.localizedStringWithFormat("Unable to parse feed %@", (self.url?.absoluteString)!)), fileName: #file, lineNumber: #line)
         
         // create an alert and show it on the main thread
-        let view:UIAlertView = UIAlertView.init(title: "Unable to parse feed", message: error.localizedDescription, delegate: nil, cancelButtonTitle: "OK")
-        DispatchQueue.main.async {
-            view.show()
-        }
+        // create an alert and show it on the main thread
+        let alert:UIAlertController = UIAlertController.init(title: "Unable to parse feed", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title:"OK", style:UIAlertActionStyle.cancel, handler:nil))
+        present(alert, animated: true, completion:nil)
     }
 
 }
