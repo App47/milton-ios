@@ -4,21 +4,5 @@
 <dict>
 	<key>application id</key>
 	<string>5887955ee609983cf6001de9</string>
-	<key>configuration update frequency</key>
-	<real>1e-05</real>
-	<key>delay data upload interval</key>
-	<integer>10</integer>
-	<key>send actual device identifier</key>
-	<true/>
-	<key>show network activity</key>
-	<true/>
-	<key>agent logging level</key>
-	<string>debug</string>
-	<key>upload on exit</key>
-	<true/>
-	<key>send events immediately</key>
-	<true/>
-	<key>capture crash format</key>
-	<string>symbolicate</string>
 </dict>
 </plist>
