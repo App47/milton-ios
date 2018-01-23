@@ -23,7 +23,6 @@
 		835B4D70144EF50100F2A535 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D6F144EF50100F2A535 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		835B4D73144EF52900F2A535 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D72144EF52900F2A535 /* NSDate+InternetDateTime.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		835B4D76144EF5C600F2A535 /* MiltonFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 835B4D75144EF5C600F2A535 /* MiltonFeedViewController.m */; };
-		835F20B0144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 835F209B144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist */; };
 		835F20BA144DCC0F00B8F7B5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835F20B9144DCC0F00B8F7B5 /* CoreLocation.framework */; };
 		835F2179144DF38600B8F7B5 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 835F20BC144DF38500B8F7B5 /* add.png */; };
 		835F217A144DF38600B8F7B5 /* airplane.png in Resources */ = {isa = PBXBuildFile; fileRef = 835F20BD144DF38500B8F7B5 /* airplane.png */; };
@@ -276,7 +275,6 @@
 		835B4D72144EF52900F2A535 /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
 		835B4D74144EF5C600F2A535 /* MiltonFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiltonFeedViewController.h; sourceTree = "<group>"; };
 		835B4D75144EF5C600F2A535 /* MiltonFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiltonFeedViewController.m; sourceTree = "<group>"; };
-		835F209B144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmbeddedAgentSettings.plist; sourceTree = "<group>"; };
 		835F20B9144DCC0F00B8F7B5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		835F20BC144DF38500B8F7B5 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		835F20BD144DF38500B8F7B5 /* airplane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplane.png; sourceTree = "<group>"; };
@@ -549,7 +547,6 @@
 			isa = PBXGroup;
 			children = (
 				220A63761E38FE3A00B0A909 /* EmbeddedAgent.framework */,
-				835F209B144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist */,
 			);
 			name = App47;
 			path = Milton/App47;
@@ -911,7 +908,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				83B76824144CD79D00D160F4 /* InfoPlist.strings in Resources */,
-				835F20B0144DC9D200B8F7B5 /* EmbeddedAgentSettings.plist in Resources */,
 				835F2179144DF38600B8F7B5 /* add.png in Resources */,
 				835F217A144DF38600B8F7B5 /* airplane.png in Resources */,
 				835F217B144DF38600B8F7B5 /* alarm.png in Resources */,

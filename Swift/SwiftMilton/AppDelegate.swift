@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        EmbeddedAgent.configureAgent()
+        EmbeddedAgent.configureAgent(withAppID: "5887955ee609983cf6001de9")
         return true
     }
 

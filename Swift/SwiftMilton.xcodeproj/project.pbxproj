@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22025CA81E2FCA880092A3B8 /* EmbeddedAgentSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22025CA61E2FCA880092A3B8 /* EmbeddedAgentSettings.plist */; };
 		22025CB61E2FD64F0092A3B8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 22025CB21E2FD64F0092A3B8 /* icon.png */; };
 		22025CB71E2FD64F0092A3B8 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22025CB31E2FD64F0092A3B8 /* icon@2x.png */; };
 		22025CB81E2FD64F0092A3B8 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 22025CB41E2FD64F0092A3B8 /* icon120.png */; };
@@ -242,7 +241,6 @@
 /* Begin PBXFileReference section */
 		0A80C1C93E42CAFB5B397246 /* Pods-SwiftMiltonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMiltonTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMiltonTests/Pods-SwiftMiltonTests.release.xcconfig"; sourceTree = "<group>"; };
 		16E6ED856F18687EE04CC31B /* Pods-SwiftMilton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMilton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMilton/Pods-SwiftMilton.debug.xcconfig"; sourceTree = "<group>"; };
-		22025CA61E2FCA880092A3B8 /* EmbeddedAgentSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = EmbeddedAgentSettings.plist; path = App47/EmbeddedAgentSettings.plist; sourceTree = "<group>"; };
 		22025CB21E2FD64F0092A3B8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = icons/icon.png; sourceTree = "<group>"; };
 		22025CB31E2FD64F0092A3B8 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "icons/icon@2x.png"; sourceTree = "<group>"; };
 		22025CB41E2FD64F0092A3B8 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon120.png; path = icons/icon120.png; sourceTree = "<group>"; };
@@ -692,7 +690,6 @@
 		221C2C461E26B55D00AEF7BA = {
 			isa = PBXGroup;
 			children = (
-				221C2C741E26B57200AEF7BA /* App47 */,
 				221C2C511E26B55D00AEF7BA /* SwiftMilton */,
 				221C2C681E26B55E00AEF7BA /* SwiftMiltonTests */,
 				221C2C501E26B55D00AEF7BA /* Products */,
@@ -734,14 +731,6 @@
 				221C2C6B1E26B55E00AEF7BA /* Info.plist */,
 			);
 			path = SwiftMiltonTests;
-			sourceTree = "<group>";
-		};
-		221C2C741E26B57200AEF7BA /* App47 */ = {
-			isa = PBXGroup;
-			children = (
-				22025CA61E2FCA880092A3B8 /* EmbeddedAgentSettings.plist */,
-			);
-			name = App47;
 			sourceTree = "<group>";
 		};
 		5D9704E65D40F62E78E8E157 /* Pods */ = {
@@ -954,7 +943,6 @@
 				2211CD241E2E6D390093FFC7 /* world.png in Resources */,
 				2211CC911E2E6D390093FFC7 /* clapboard.png in Resources */,
 				2211CBED1E2E6D2B0093FFC7 /* calendar.png in Resources */,
-				22025CA81E2FCA880092A3B8 /* EmbeddedAgentSettings.plist in Resources */,
 				2211CCCD1E2E6D390093FFC7 /* link.png in Resources */,
 				2211CCBC1E2E6D390093FFC7 /* gun.png in Resources */,
 				2211CBCC1E2E6D1E0093FFC7 /* arrow-right.png in Resources */,
