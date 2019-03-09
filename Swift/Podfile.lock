@@ -1,23 +1,29 @@
 PODS:
-  - EmbeddedAgent (3.0.0)
+  - EmbeddedAgent (4.1.0)
   - MWFeedParser (1.0.1):
     - MWFeedParser/FeedParser (= 1.0.1)
-    - MWFeedParser/NSDate+InternetDateTime (= 1.0.1)
-    - MWFeedParser/NSString+HTML (= 1.0.1)
+    - "MWFeedParser/NSDate+InternetDateTime (= 1.0.1)"
+    - "MWFeedParser/NSString+HTML (= 1.0.1)"
   - MWFeedParser/FeedParser (1.0.1):
-    - MWFeedParser/NSDate+InternetDateTime
-    - MWFeedParser/NSString+HTML
-  - MWFeedParser/NSDate+InternetDateTime (1.0.1)
-  - MWFeedParser/NSString+HTML (1.0.1)
+    - "MWFeedParser/NSDate+InternetDateTime"
+    - "MWFeedParser/NSString+HTML"
+  - "MWFeedParser/NSDate+InternetDateTime (1.0.1)"
+  - "MWFeedParser/NSString+HTML (1.0.1)"
 
 DEPENDENCIES:
   - EmbeddedAgent
-  - MWFeedParser (= 1.0.1)
+  - MWFeedParser
+
+SPEC REPOS:
+  https://github.com/App47/PodSpecs.git:
+    - EmbeddedAgent
+  https://github.com/cocoapods/specs.git:
+    - MWFeedParser
 
 SPEC CHECKSUMS:
-  EmbeddedAgent: 142771e2e553838a0cc4d6945568a1fd2ab013f7
+  EmbeddedAgent: 97548f4a6a9e9648fb18ef8c8762fd665722b704
   MWFeedParser: 2cf646014c1baf6ad1b08c480b40a08180079247
 
-PODFILE CHECKSUM: b135caae0a99ffa691b5b1f6d0e09df009e919e2
+PODFILE CHECKSUM: 7a98290f288ea32405cff3734ab529b8b4c7a45e
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.5.3

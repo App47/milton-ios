@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [EmbeddedAgent configureAgentWithAppID:@"5887955ee609983cf6001de9"];
+  [EmbeddedAgent configureAgentWithAppID:@"53c2e57e12d3bd4125000105"];
   EALogInfo(@"application did finish launching");
   
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

@@ -9,7 +9,7 @@ target 'SwiftMilton' do
   source 'https://github.com/CocoaPods/Specs.git'
 
   # Pods for SwiftMilton
-  pod 'MWFeedParser', '1.0.1'
+  pod 'MWFeedParser'
   pod 'EmbeddedAgent'
 
   target 'SwiftMiltonTests' do
